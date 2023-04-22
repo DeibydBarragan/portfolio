@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { Route } from './interfaces'
 import Navlink from './Navlink'
 import { HiOutlineMenu } from 'react-icons/hi'
@@ -12,6 +12,28 @@ type Props = {
 
 export default function MenuLinks({routes}: Props) {
   const { isOpen, setIsOpen } = useContext(NavbarContext)
+  const menu = useRef<HTMLDivElement>(null)
+  const [isMounted, setIsMounted] = useState(false)
+
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+
+  useEffect(() => {
+    const onClosingMenu = (event: MouseEvent) => {
+      if(menu.current && !menu.current.contains(event.target as Node)) {
+        setIsOpen(false)
+      }
+    }
+
+    if(isMounted) {
+      if(isOpen) {
+        document.addEventListener('mousedown', onClosingMenu)
+      } else {
+        document.removeEventListener('mousedown', onClosingMenu)
+      }
+    }
+  }, [isOpen, isMounted, setIsOpen])
 
   return (
     <div className='relative md:hidden'>
@@ -34,7 +56,7 @@ export default function MenuLinks({routes}: Props) {
         {
           isOpen && 
             <motion.div
-              id='menu-links'
+              ref={menu}
               className='flex flex-col absolute mt-7 border-2 dark:border-none bg-white dark:bg-black rounded-lg p-4'
               initial={{opacity: 0, y: -10}}
               animate={{opacity: 1, y: 0}}

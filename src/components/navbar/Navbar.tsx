@@ -37,6 +37,7 @@ export default function Navbar({}: Props) {
         </div>
         {/* Theme switcher */}
         <div className='flex gap-2 mr-2'>
+          <i className='AiFillAlert'/>
           <DarkModeButton/>
         </div>
       </nav>
