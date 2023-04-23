@@ -7,7 +7,12 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {}
+    extend: {
+      fontFamily: {
+        lexend: ['Lexend Deca', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif']
+      },
+    }
   },
   plugins: [],
 }
