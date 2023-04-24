@@ -1,17 +1,13 @@
-import React from 'react';
+import { cardData } from './interfaces';
 
-type Props = {
-  color: string,
-  description: string,
-  children: React.ReactNode
-}
+export default function NeonCard({borderColor = null, shadowColor = null, textColor = null, icon = null, description, children = null}: cardData) {
 
-export default function NeonCard({color, description, children}: Props) {
   return (
-    <div className={`flex border-2 border-${color}-500 items-center justify-center gap-2 p-3 rounded-xl`}>
+    <div className={`flex ${borderColor} ${shadowColor} border shadow-sm rounded-md items-center justify-center gap-2 p-3`}>
       {description}
-      <div className={`text-${color}-500 text-2xl`}>
+      <div className={`${textColor} text-2xl`}>
         {children}
+        {icon}
       </div>
     </div>
   )

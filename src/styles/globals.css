@@ -31,19 +31,16 @@ h3 {
 }
 
 body {
-  @apply font-roboto;
+  @apply font-roboto
+  bg-white
+  dark:bg-black
+  ;
 }
 
-.neon {
-  animation: neon-animation 1s ease-in-out infinite alternate;
+.border-gradient {
+  border-image: linear-gradient(to right, #6366F1, #8B5CF6, #EC4899, #F87171, #F59E0B, #D97706, #6366F1) 1;
 }
 
-@keyframes neon-animation {
-  from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #5f5fff, 0 0 70px #5f5fff, 0 0 80px #5f5fff, 0 0 100px #5f5fff;
-  }
-
-  to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #5f5fff, 0 0 35px #5f5fff, 0 0 40px #5f5fff, 0 0 50px #5f5fff;
-  }
+.shadow-left {
+  box-shadow: -10px 0px 10px -10px #3730a3;
 }
