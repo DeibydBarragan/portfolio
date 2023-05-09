@@ -1,17 +1,17 @@
 import React from 'react'
 import { BsGithub } from 'react-icons/bs'
 import { BsLinkedin } from 'react-icons/bs'
-import Navlink from './Navlink'
+import Navlink from './navlink'
 import { routes } from './navbar.data'
-import DarkModeButton from './DarkModeButton'
-import MenuLinks from './MenuLinks'
+import DarkModeButton from './darkModeButton'
+import MenuLinks from './menuLinks'
 import { Link } from 'react-scroll'
 
 type Props = {}
 
 export default function Navbar({}: Props) {
   return (
-    <nav className='sticky inset-0'>
+    <nav className='fixed inset-0'>
       <div className='flex p-3 justify-between bg-white/30 dark:bg-black/30 backdrop-blur-md 2xl:px-32'>
         <div className='flex gap-2 items-center'>
           {/* Menu links */}

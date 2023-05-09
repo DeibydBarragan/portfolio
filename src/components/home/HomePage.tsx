@@ -4,8 +4,8 @@ import { Link } from "react-scroll"
 
 export default function HomePage() {
   return (
-    <main className="md:h-screen mt-4 md:mt-0 flex justify-center items-center">
-      <div className="flex flex-col md:flex-row items-center w-auto md:w-10/12 lg:w-8/12 xl:w-7/12 2xl:w-6/12 gap-6">
+    <main className="flex align-items-center min-h-screen mt-10 sm:mt-0">
+      <div className="mx-auto flex flex-col md:flex-row justify-center items-center w-auto md:w-10/12 lg:w-8/12 xl:w-7/12 2xl:w-6/12 gap-6">
         <Image
           src="/images/foto.png"
           alt="Picture of the author"

@@ -33,8 +33,7 @@ h3 {
 body {
   @apply font-roboto
   bg-white
-  dark:bg-black
-  ;
+  dark:bg-black;
 }
 
 .border-gradient {

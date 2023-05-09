@@ -1,10 +1,9 @@
 import NeonCard from "../pure/neonCard/NeonCard";
-import { HiOutlineChatAlt2, HiSpeakerphone, HiPuzzle, HiUserGroup, HiOutlineTrendingUp, HiCode } from "react-icons/hi"
 import { cardsData } from "./cards.data"
 
 export default function About() {
   return (
-    <section className="md:h-screen flex flex-col items-center" id="sobre-mi">
+    <section className="flex flex-col items-center justify-center sm:min-h-screen" id="sobre-mi">
       <div className="flex flex-col md:w-8/12 lg:w-7/12 xl:w-6/12 2xl:w-4/12 gap-6">
         <h2>Sobre mí</h2>
         <p>

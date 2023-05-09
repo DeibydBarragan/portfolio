@@ -1,6 +1,6 @@
 import { useContext, useEffect, useRef, useState } from 'react'
 import { Route } from './interfaces'
-import Navlink from './Navlink'
+import Navlink from './navlink'
 import { HiOutlineMenu } from 'react-icons/hi'
 import { HiOutlineX } from 'react-icons/hi'
 import { AnimatePresence, motion } from 'framer-motion'
