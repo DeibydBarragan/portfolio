@@ -1,10 +1,9 @@
-import React from 'react'
 import { BsGithub } from 'react-icons/bs'
 import { BsLinkedin } from 'react-icons/bs'
-import Navlink from './navlink'
+import Navlink from './Navlink'
 import { routes } from './navbar.data'
-import DarkModeButton from './darkModeButton'
-import MenuLinks from './menuLinks'
+import DarkModeButton from './DarkModeButton'
+import MenuLinks from './MenuLinks'
 import { Link } from 'react-scroll'
 
 type Props = {}
