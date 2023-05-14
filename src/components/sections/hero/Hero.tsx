@@ -2,7 +2,7 @@ import Image from "next/image"
 import { HiDocumentDownload, HiMail } from "react-icons/hi"
 import { Link } from "react-scroll"
 
-export default function HomePage() {
+export default function Hero() {
   return (
     <main className="flex align-items-center min-h-screen mt-10 sm:mt-0">
       <div className="mx-auto flex flex-col md:flex-row justify-center items-center w-auto md:w-10/12 lg:w-8/12 xl:w-7/12 2xl:w-6/12 gap-6">
@@ -24,13 +24,13 @@ export default function HomePage() {
             <a
               href="/files/CV.pdf" 
               download="CV.pdf"
-              className="btn"  
+              className="btn bg-gradient-to-r from-indigo-700 to-orange-500"  
             >
               Descargar CV
               <HiDocumentDownload className="text-xl"/>
             </a>
             <Link
-              className="btn"
+              className="btn bg-gradient-to-r from-indigo-700 to-orange-500"
               to="contact"
             >
               Contáctame

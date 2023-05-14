@@ -1,9 +1,12 @@
-import NeonCard from "../pure/neonCard/NeonCard";
+import NeonCard from "./neonCard/NeonCard";
 import { cardsData } from "./cards.data"
 
 export default function About() {
   return (
-    <section className="flex flex-col items-center justify-center sm:min-h-screen" id="sobre-mi">
+    <section
+      className="pt-16 section"
+      id="about"
+    >
       <div className="flex flex-col md:w-8/12 lg:w-7/12 xl:w-6/12 2xl:w-4/12 gap-6">
         <h2>Sobre mí</h2>
         <p>

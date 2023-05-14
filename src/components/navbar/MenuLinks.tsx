@@ -57,7 +57,7 @@ export default function MenuLinks({routes}: Props) {
           isOpen && 
             <motion.div
               ref={menu}
-              className='flex flex-col absolute mt-7 border-2 dark:border-none bg-white dark:bg-black rounded-lg p-4'
+              className='flex flex-col absolute mt-7 rounded-lg p-4 bg-white border dark:bg-black border-indigo-900'
               initial={{opacity: 0, y: -10}}
               animate={{opacity: 1, y: 0}}
               exit={{opacity: 0, y: -10}}

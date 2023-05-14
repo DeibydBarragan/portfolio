@@ -10,15 +10,15 @@ type Props = {}
 
 export default function Navbar({}: Props) {
   return (
-    <nav className='fixed inset-0'>
-      <div className='flex p-3 justify-between bg-white/30 dark:bg-black/30 backdrop-blur-md 2xl:px-32'>
+    <nav className='fixed inset-x-0 z-10'>
+      <div className='flex p-3 justify-between bg-white/30 dark:bg-black/30 backdrop-blur-md 2xl:px-32 h-16'>
         <div className='flex gap-2 items-center'>
           {/* Menu links */}
           <MenuLinks routes={routes}/>
           {/* Social media links */}
 
           <Link
-            className='rounded-lg p-2 text-gray-600 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-400 font-semibold transition ease-in-out duration-200 hover:cursor-pointer'
+            className='nav-link hidden sm:block'
             to='body'
             smooth={true}
             duration={200}
@@ -39,9 +39,17 @@ export default function Navbar({}: Props) {
           ))}
         </div>
         {/* Theme switcher */}
-        <div className='flex gap-2 mr-2'>
+        <div className='flex gap-3 mr-2'>
           <i className='AiFillAlert'/>
           <DarkModeButton/>
+          <Link
+            className='btn bg-indigo-600'
+            to='contact'
+            smooth={true}
+            duration={500}
+          >
+            Contáctame
+          </Link>
         </div>
       </div>
     </nav>

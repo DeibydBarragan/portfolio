@@ -2,23 +2,19 @@ import { Route } from "./interfaces";
 
 export const routes: Route[] = [
   {
-    path: 'sobre-mi',
+    path: 'about',
     name: 'Sobre mí',
   },
   {
-    path: 'habilidades',
+    path: 'skills',
     name: 'Habilidades',
   },
   {
-    path: 'proyectos',
+    path: 'projects',
     name: 'Proyectos',
   },
   {
-    path: 'contacto',
-    name: 'Contacto',
-  },
-  {
-    path: 'educacion',
+    path: 'education',
     name: 'Educacion',
   }
 ];
