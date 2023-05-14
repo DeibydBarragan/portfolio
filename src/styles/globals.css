@@ -11,7 +11,7 @@
 }
 
 .section {
-  @apply pt-16 md:pt-0 flex flex-col items-center justify-center sm:min-h-screen
+  @apply pt-16 md:pt-0 flex flex-col gap-3 justify-center sm:min-h-screen mx-auto
 }
 
 .btn {
