@@ -14,8 +14,8 @@ export default function DarkModeButton() {
     >
       {
         theme === 'dark' ?
-        <HiSun className='nav-icons active:scale-90' size='1.7rem'/> :
-        <HiMoon className='nav-icons active:scale-90' size='1.7rem'/>
+        <HiSun className='nav-icons active:scale-90'/> :
+        <HiMoon className='nav-icons active:scale-90'/>
       }
     </button>
   )

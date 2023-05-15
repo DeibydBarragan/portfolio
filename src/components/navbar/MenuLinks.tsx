@@ -42,12 +42,10 @@ export default function MenuLinks({routes}: Props) {
         <HiOutlineX
           onClick={() => setIsOpen(false)}
           className='nav-icons active:scale-90 transition ease-in-out duration-200'
-          size='1.5rem'
         /> :
         <HiOutlineMenu
           onClick={() => setIsOpen(true)}
-          className='nav-icons text-3xl active:scale-90 transition ease-in-out duration-200'
-          size='1.5rem'
+          className='nav-icons active:scale-90 transition ease-in-out duration-200'
         />
       }
       
