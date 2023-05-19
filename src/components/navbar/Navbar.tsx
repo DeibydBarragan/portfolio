@@ -5,6 +5,9 @@ import { routes } from './navbar.data'
 import DarkModeButton from './DarkModeButton'
 import MenuLinks from './MenuLinks'
 import { Link } from 'react-scroll'
+import { Menu } from '@headlessui/react'
+import { motion } from 'framer-motion'
+import { HiOutlineMenu } from 'react-icons/hi'
 
 type Props = {}
 
