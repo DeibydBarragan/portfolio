@@ -1,24 +1,27 @@
-import { SiJavascript } from "react-icons/si"
+import { Skill } from "./interfaces"
 
-type Props = {}
+type Props = {
+  skill: Skill
+}
 
-export default function SkillCard({}: Props) {
+export default function SkillCard({skill}: Props) {
   return (
     <div
-      className="flex flex-col-reverse rounded-xl overflow-hidden shadow-xl bg-slate-100  dark:bg-slate-900 border dark:border-indigo-700"
+      className="flex rounded-xl p-4 gap-4 hover:-translate-y-1 transition ease-in-out bg-slate-100  dark:bg-slate-900 border dark:border-indigo-700"
     >
-      <div className="flex justify-center py-1 border-t-2 dark:border-t dark:border-indigo-700">
+      <div>
+        {skill.icon}
+      </div>
+      <div className="flex flex-col justify-center w-full gap-3">
         <h4
           className='text-gray-800 dark:text-gray-200 text-md font-bold'
         >
-          Javascript
+          {skill.name}
         </h4>
-      </div>
-      <div className="flex justify-center p-6">
-        <SiJavascript
-          size={80}
-          className='text-yellow-500'
-        />
+        <hr/>
+        <p>
+          {skill.level}
+        </p>
       </div>
     </div>
   )

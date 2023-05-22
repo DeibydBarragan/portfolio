@@ -1,12 +1,14 @@
+import Section from "../Section"
+
 type Props = {}
 
 export default function Contact({}: Props) {
   return (
-    <div
+    <Section
       className="bg-indigo-200 section"
       id="contact"
     >
       <h2>Contáctame</h2>
-    </div>
+    </Section>
   )
 }

@@ -13,7 +13,7 @@ type Props = {}
 
 export default function Navbar({}: Props) {
   return (
-    <nav className='fixed inset-x-0 z-10'>
+    <nav className='fixed inset-x-0 z-20'>
       <div className='flex p-3 justify-between bg-white/30 dark:bg-black/30 backdrop-blur-md 2xl:px-32 h-16'>
         <div className='flex gap-2 items-center'>
           {/* Menu links */}

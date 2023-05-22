@@ -1,10 +1,11 @@
 import NeonCard from "./neonCard/NeonCard";
 import { cardsData } from "./cards.data"
+import Section from "../Section";
 
 export default function About() {
   return (
-    <section
-      className="pt-16 section w-full sm:w-10/12  md:w-7/12 lg:w-6/12 2xl:w-5/12"
+    <Section
+      className="sm:w-10/12  md:w-7/12 lg:w-6/12 2xl:w-5/12"
       id="about"
     >
       <h2>Sobre mí</h2>
@@ -21,6 +22,6 @@ export default function About() {
           ))
         }
       </div>
-    </section>
+    </Section>
   )
 }

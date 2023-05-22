@@ -12,6 +12,25 @@ module.exports = {
         lexend: ['Lexend Deca', 'sans-serif'],
         roboto: ['Roboto', 'sans-serif']
       },
+      animation: {
+        blob: 'blob 8s infinite',
+      },
+      keyframes: {
+        blob: {
+          '0%': {
+            transform: 'translate(0px, 0px)',
+          },
+          '33%': {
+            transform: 'translate(30px, -50px)',
+          },
+          '66%': {
+            transform: 'translate(-20px, 20px)',
+          },
+          '100%': {
+            transform: 'translate(0px,0px)',
+          },
+        },
+      }
     }
   },
   plugins: [],

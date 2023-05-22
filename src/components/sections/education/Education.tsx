@@ -1,11 +1,12 @@
 import React from 'react'
 import { HiCode } from 'react-icons/hi'
+import Section from '../Section'
 
 type Props = {}
 
 export default function Education({}: Props) {
   return (
-    <section
+    <Section
       className='bg-red-200 section'
       id='education'
     >
@@ -29,6 +30,6 @@ export default function Education({}: Props) {
           </ul>
         <h2>Experiencia</h2>
       </div>
-    </section>
+    </Section>
   )
 }

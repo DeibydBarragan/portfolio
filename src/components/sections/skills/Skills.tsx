@@ -1,50 +1,46 @@
 import { Tab } from "@headlessui/react"
 import SkillCard from "./skillCard/SkillCard"
+import { categories } from "./skills.data"
+import Section from "../Section"
 
 type Props = {}
 
 export default function Skills({}: Props) {
+
   return (
-    <div
-      className="section lg:w-10/12 xl:w-8/12 2xl:w-6/12"
+    <Section
+      className="sm:w-11/12 lg:w-10/12 xl:w-7/12 2xl:w-5/12"
       id="skills"
     >
       <h2>Habilidades</h2>
       <p>Tecnologías con las que he trabajado</p>
-      <h3>Lenguajes de programación</h3>
       <Tab.Group>
-        <Tab.List className="flex space-x-1 rounded-xl bg-blue-900/20 p-1">
-          <Tab>Lenguajes de programación</Tab>
-          <Tab>Frameworks Frontend</Tab>
-          <Tab>Frameworks Backend</Tab>
-          <Tab>Herramientas</Tab>
+        <Tab.List className="bg-white/30 dark:bg-gray-900 shadow-md dark:border-none text-black dark:text-white font-semibold flex overflow-x-scroll max-w-full rounded-xl md:overflow-x-auto gap-4 p-2 justify-evenly">
+          {categories.map((category, index) => (
+            <Tab
+              key={index}
+              className="rounded-lg p-4 bg-sky-100 dark:bg-gray-950"
+            >
+              {category.name}
+            </Tab>
+          ))}
         </Tab.List>
-        <Tab.Panels>
-          <Tab.Panel>Content 1</Tab.Panel>
-          <Tab.Panel>Content 2</Tab.Panel>
-          <Tab.Panel>Content 3</Tab.Panel>
-          <Tab.Panel>Content 4</Tab.Panel>
+        <Tab.Panels className="pt-3">
+          {categories.map((category, index) => (
+            <Tab.Panel
+              key={index}
+              className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 rounded-lg"
+            >
+              {category.skills.map((skill, index) => (
+                <SkillCard
+                  key={index}
+                  skill={skill}
+                />
+              ))}
+            </Tab.Panel>
+          ))}
         </Tab.Panels>
       </Tab.Group>
-      {/**<div className="grid grid-cols-2 xl:grid-cols-6 gap-4">
-        <SkillCard />
-        <SkillCard />
-        <SkillCard />
-        <SkillCard />
-        <SkillCard />
-        <SkillCard />
-        <SkillCard />
-        <SkillCard />
-      </div>**/}
-      <h3>Frameworks frontend</h3>
-      <div className="bg-indigo-700 flex flex-wrap">
-      </div>
-      <h3>Frameworks backend</h3>
-      <div className="bg-gray-500 flex flex-wrap">
-      </div>
-      <h3>Herramientas</h3>
-      <div className="bg-white flex flex-wrap">
-      </div>
-    </div>
+    </Section>
   )
 }
