@@ -7,12 +7,6 @@ import BgShapes from '../../pure/bgShapes/BgShapes';
 export default function Hero() {
   return (
     <Section className="md:flex-row items-center gap-6 md:w-9/12 lg:w-7/12 2xl:w-6/12">
-      <BgShapes
-        className="bg-indigo-700 w-96 h-96 top-20"
-      />
-      <BgShapes
-        className="bg-orange-700 w-96 h-96 right-10 animation-delay-2"
-      />
       <Image
         src="/images/foto.png"
         alt="Picture of the author"

@@ -9,7 +9,7 @@ export default function Layout({ children }: Props) {
   return (
     <>
       <Navbar/>
-      <div className="flex flex-col p-4 gap-10">
+      <div className="flex flex-col gap-10">
         {children}
       </div>
       <Footer/>

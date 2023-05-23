@@ -2,6 +2,7 @@ import { Tab } from "@headlessui/react"
 import SkillCard from "./skillCard/SkillCard"
 import { categories } from "./skills.data"
 import Section from "../Section"
+import BgShapes from "@/components/pure/bgShapes/BgShapes";
 
 type Props = {}
 
@@ -9,17 +10,22 @@ export default function Skills({}: Props) {
 
   return (
     <Section
-      className="sm:w-11/12 lg:w-10/12 xl:w-7/12 2xl:w-5/12"
+      className="sm:w-11/12 lg:w-10/12 xl:w-7/12 2xl:w-5/12 text-gray-600 dark:text-gray-300 "
       id="skills"
     >
+      <BgShapes
+        className="bg-sky-500 h-96 w-96"
+      />
+      <BgShapes
+        className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-72 w-72 top-30 right-10"
+      />
       <h2>Habilidades</h2>
-      <p>Tecnologías con las que he trabajado</p>
       <Tab.Group>
-        <Tab.List className="bg-white/30 dark:bg-gray-900 shadow-md dark:border-none text-black dark:text-white font-semibold flex overflow-x-scroll max-w-full rounded-xl md:overflow-x-auto gap-4 p-2 justify-evenly">
+        <Tab.List className="bg-white dark:bg-zinc-950/70 backdrop-blur-sm shadow-md dark:border-nonefont-semibold flex overflow-x-scroll max-w-full rounded-xl md:overflow-x-auto gap-4 p-2 justify-evenly">
           {categories.map((category, index) => (
             <Tab
               key={index}
-              className="rounded-lg p-4 bg-sky-100 dark:bg-gray-950"
+              className="rounded-lg p-4 font-semibold"
             >
               {category.name}
             </Tab>

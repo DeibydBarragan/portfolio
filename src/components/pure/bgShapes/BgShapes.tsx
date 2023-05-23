@@ -9,7 +9,7 @@ export default function BgShapes({
   className
 }: Props) {
   const shapeClasses = classNames(
-    'absolute rounded-full -z-10 mix-blend-multiply filter blur-xl opacity-70 animate-blob',
+    'absolute rounded-full -z-10 mix-blend-multiply filter blur-3xl opacity-50 dark:opcaity-70',
     className
   )
 
