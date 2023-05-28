@@ -15,7 +15,7 @@ export default function Navlink({route, index}: Props) {
       smooth={true}
       duration={500}
       spy={true}
-      activeClass='bg-white dark:bg-gray-600 dark:text-white'
+      activeClass='bg-white dark:bg-gray-600 dark:text-white border dark:border-none'
     >
       <motion.span
         initial={{
