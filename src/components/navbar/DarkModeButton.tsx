@@ -11,6 +11,7 @@ export default function DarkModeButton() {
   return (
     <button 
       onClick={handleTheme}
+      aria-label='dark mode button'
     >
       {
         theme === 'dark' ?

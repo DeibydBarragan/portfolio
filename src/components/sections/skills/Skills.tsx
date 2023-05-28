@@ -23,7 +23,7 @@ export default function Skills({}: Props) {
       />
       <h2>Habilidades</h2>
       <Tab.Group>
-        <Tab.List className="font-semibold bg-white dark:bg-zinc-950/70 backdrop-blur-sm shadow-md dark:border-nonefont-semibold flex overflow-x-scroll rounded-xl md:overflow-x-auto gap-4 p-2 justify-start  md:justify-evenly">
+        <Tab.List className="font-semibold bg-white/70 dark:bg-zinc-950/70 backdrop-blur-sm shadow-md dark:border-nonefont-semibold flex overflow-x-scroll rounded-xl md:overflow-x-auto gap-4 p-2 justify-start  md:justify-evenly">
           {categories.map((category, index) => (
             <Tab
               as={motion.div}

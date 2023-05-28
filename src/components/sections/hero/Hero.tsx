@@ -7,12 +7,13 @@ export default function Hero() {
   return (
     <Section
       className="md:flex-row items-center gap-6 md:w-9/12 lg:w-7/12 2xl:w-6/12"
+      id="hero"
       initial={{opacity: 0, y:10}}
       whileInView={{opacity: 1, y: 0}}
       transition={{delay: 0.5}}
     >
       <Image
-        src="/images/foto.png"
+        src="/images/foto.webp"
         alt="Picture of the author"
         width={250}
         height={250}

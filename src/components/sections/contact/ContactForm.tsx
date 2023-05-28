@@ -23,11 +23,13 @@ export default function ContactForm({}: Props) {
   return (
     <form
       className='flex flex-col gap-4'
-     onSubmit={handleSubmit}
+      onSubmit={handleSubmit}
+      aria-label='Formulario de contacto'
     >
       {/**Email */}
       <motion.input
         type="text"
+        aria-label='Tu correo electronico'
         placeholder='Tu correo electronico'
         className='input-text'
         transition={{delay: 0.2}}
@@ -36,6 +38,7 @@ export default function ContactForm({}: Props) {
       {/**Subject */}
       <motion.input
         type="text"
+        aria-label='Asunto'
         placeholder='Asunto'
         className='input-text'
         transition={{delay: 0.4}}
@@ -44,6 +47,7 @@ export default function ContactForm({}: Props) {
       {/**Mensaje */}
       <motion.textarea
         placeholder='Mensaje'
+        aria-label='Mensaje'
         className='input-text'
         transition={{delay: 0.6}}
         {...inputAnimation}
@@ -52,6 +56,7 @@ export default function ContactForm({}: Props) {
       <button
         type='submit'
         className='btn w-full bg-gradient-to-r from-indigo-700 to-orange-500'
+        aria-label='Enviar mensaje'
       >
         Enviar mensaje
         <HiMail className="text-xl"/>

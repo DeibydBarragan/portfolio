@@ -31,10 +31,17 @@ export default function Navbar({}: Props) {
           >
             Deibyd Barragán
           </Link>
-          <a href='https://github.com/DeibydBarragan' target='_blank'>
+          <a href='https://github.com/DeibydBarragan'
+            target='_blank' 
+            aria-label='Perfil de Github'
+          >
             <BsGithub className='nav-icons'/>
           </a>
-          <a href='https://www.linkedin.com/in/deibyd-barragan-68b59018b/' target='_blank'>
+          <a 
+            href='https://www.linkedin.com/in/deibyd-barragan-68b59018b/' 
+            target='_blank' 
+            aria-label='Perfil de LinkedIn'
+          >
             <BsLinkedin className='nav-icons'/>
           </a>
         </div>

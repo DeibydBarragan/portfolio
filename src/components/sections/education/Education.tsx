@@ -32,7 +32,7 @@ export default function Education({}: Props) {
         className='h-72 w-72 top-30 right-0 bg-orange-500'
       />
       <BgShapes
-        className='h-72 w-72 top-0 left-0 bg-sky-500'
+        className='h-72 w-72 top-0 left-0 bg-sky-500 hidden md:block'
       />
       <h2>Educación</h2>
         <div className='relative flex flex-col gap-3 rounded-lg bg-white/70 dark:bg-zinc-950/70 p-6'>
@@ -41,7 +41,7 @@ export default function Education({}: Props) {
             transition={{delay: 0.3}}
             {...liAnimation}
           >
-            <AiFillRightCircle className="text-3xl text-indigo-700"/>
+            <AiFillRightCircle className="text-5xl md:text-3xl text-indigo-700"/>
             <p>
               Técnico en programación de software en formación(3er trimestre)
               <br/>Servicio Nacional de Aprendizaje (SENA)
@@ -54,7 +54,7 @@ export default function Education({}: Props) {
             transition={{delay: 0.6}}
             {...liAnimation}
           >
-            <AiFillRightCircle className="text-3xl text-indigo-700"/>
+            <AiFillRightCircle className="text-5xl md:text-3xl text-indigo-700"/>
             <p>
               Bachiller técnico con énfasis en gestión de proyectos culturales
               <br/>Colegio El Porvenir IED (Bogotá D.C)
@@ -69,7 +69,7 @@ export default function Education({}: Props) {
             transition={{delay: 0.9}}
             {...liAnimation}
           >
-            <AiFillRightCircle className="text-3xl text-indigo-700"/>
+            <AiFillRightCircle className="text-5xl md:text-3xl text-indigo-700"/>
             <p>
               Técnico en programación de software en formación(3er trimestre)
               <br/>Servicio Nacional de Aprendizaje (SENA)

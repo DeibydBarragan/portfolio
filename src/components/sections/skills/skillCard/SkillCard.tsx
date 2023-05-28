@@ -14,7 +14,7 @@ export default function SkillCard({skill, index}: Props) {
   )
   return (
     <motion.div
-      className="flex rounded-xl p-4 gap-4 hover:-translate-y-1 transition ease-in-out bg-white shadow-sm dark:bg-zinc-950/80 backdrop-blur-sm dark:border-none"
+      className="flex rounded-xl p-4 gap-4 hover:-translate-y-1 transition ease-in-out bg-white/70 shadow-sm dark:bg-zinc-950/80 backdrop-blur-sm dark:border-none"
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.2 * index }}
@@ -23,11 +23,11 @@ export default function SkillCard({skill, index}: Props) {
         {skill.icon}
       </div>
       <div className="flex flex-col justify-center w-full gap-3">
-        <h4
+        <span
           className='text-md font-bold'
         >
           {skill.name}
-        </h4>
+        </span>
         <hr className="border-gray-300 dark:border-gray-500"/>
         <p className="text-gray-500 dark:text-gray-400">
           {skill.level}

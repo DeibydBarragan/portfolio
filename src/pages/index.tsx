@@ -5,16 +5,24 @@ import Layout from "@/components/layout/Layout";
 import Skills from '@/components/sections/skills/Skills';
 import Projects from '@/components/sections/projects/Projects';
 import Contact from '@/components/sections/contact/Contact';
+import UpButton from '@/components/pure/upButton/UpButton';
+import Head from 'next/head';
 
 export default function Home(): JSX.Element {
   return (
-    <Layout>
-      <Hero/>
-      <About/>
-      <Skills/>
-      <Projects/>
-      <Education/>
-      <Contact/>
-    </Layout>
+    <>
+      <Head>
+        <title>Deibyd Barragán | Portafolio</title>
+      </Head>
+      <Layout>
+        <Hero/>
+        <About/>
+        <Skills/>
+        <Projects/>
+        <Education/>
+        <Contact/>
+        <UpButton/>
+      </Layout>
+    </>
   )
 }

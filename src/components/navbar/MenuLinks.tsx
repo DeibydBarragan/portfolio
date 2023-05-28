@@ -16,7 +16,10 @@ export default function MenuLinks({routes}: Props) {
 
   return (
     <Menu as="div" className="relative md:hidden pt-2">
-      <Menu.Button onClick={()=>setOpen(!isOpen)}>
+      <Menu.Button
+        onClick={()=>setOpen(!isOpen)}
+        aria-label='Botón de menú	'  
+      >
         {isOpen ?
           <HiOutlineX className='nav-icons'/>
           : <HiOutlineMenu className='nav-icons'/>
