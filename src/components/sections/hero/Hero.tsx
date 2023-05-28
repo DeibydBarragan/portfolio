@@ -2,18 +2,21 @@ import Image from "next/image"
 import { HiDocumentDownload, HiMail } from "react-icons/hi"
 import { Link } from "react-scroll"
 import Section from "../Section"
-import BgShapes from '../../pure/bgShapes/BgShapes';
 
 export default function Hero() {
   return (
-    <Section className="md:flex-row items-center gap-6 md:w-9/12 lg:w-7/12 2xl:w-6/12">
+    <Section
+      className="md:flex-row items-center gap-6 md:w-9/12 lg:w-7/12 2xl:w-6/12"
+      initial={{opacity: 0, y:10}}
+      whileInView={{opacity: 1, y: 0}}
+      transition={{delay: 0.5}}
+    >
       <Image
         src="/images/foto.png"
         alt="Picture of the author"
         width={250}
         height={250}
         className="rounded-full"
-
       />
       <div className="flex flex-col gap-3">
         <h3>Debyd Barragán</h3>

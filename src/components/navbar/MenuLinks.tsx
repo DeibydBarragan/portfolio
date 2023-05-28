@@ -15,7 +15,7 @@ export default function MenuLinks({routes}: Props) {
   const [isOpen, setOpen] = useState(false)
 
   return (
-    <Menu as="div" className="relative 2xl:hidden pt-2">
+    <Menu as="div" className="relative md:hidden pt-2">
       <Menu.Button onClick={()=>setOpen(!isOpen)}>
         {isOpen ?
           <HiOutlineX className='nav-icons'/>

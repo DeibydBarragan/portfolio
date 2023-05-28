@@ -3,6 +3,8 @@ import SkillCard from "./skillCard/SkillCard"
 import { categories } from "./skills.data"
 import Section from "../Section"
 import BgShapes from "@/components/pure/bgShapes/BgShapes";
+import classNames from "classnames";
+import { motion } from "framer-motion";
 
 type Props = {}
 
@@ -14,19 +16,32 @@ export default function Skills({}: Props) {
       id="skills"
     >
       <BgShapes
-        className="bg-sky-500 h-96 w-96"
+        className="bg-purple-400 h-96 w-96"
       />
       <BgShapes
         className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-72 w-72 top-30 right-10"
       />
       <h2>Habilidades</h2>
       <Tab.Group>
-        <Tab.List className="bg-white dark:bg-zinc-950/70 backdrop-blur-sm shadow-md dark:border-nonefont-semibold flex overflow-x-scroll max-w-full rounded-xl md:overflow-x-auto gap-4 p-2 justify-evenly">
+        <Tab.List className="font-semibold bg-white dark:bg-zinc-950/70 backdrop-blur-sm shadow-md dark:border-nonefont-semibold flex overflow-x-scroll rounded-xl md:overflow-x-auto gap-4 p-2 justify-start  md:justify-evenly">
           {categories.map((category, index) => (
             <Tab
+              as={motion.div}
               key={index}
-              className="rounded-lg p-4 font-semibold"
+              className={({ selected }) =>
+                classNames(
+                  "rounded-lg p-3 font-semibold cursor-pointer flex gap-2 items-center transition ease-in-out",
+                  selected
+                    && "bg-indigo-500 text-white dark:bg-indigo-700 dark:text-white outline-none"
+                )
+              }
+              initial={{ opacity: 0, y: -10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 * index }}
             >
+              <span className="text-xl">
+                {category.icon}
+              </span>
               {category.name}
             </Tab>
           ))}
@@ -40,6 +55,7 @@ export default function Skills({}: Props) {
               {category.skills.map((skill, index) => (
                 <SkillCard
                   key={index}
+                  index={index}
                   skill={skill}
                 />
               ))}

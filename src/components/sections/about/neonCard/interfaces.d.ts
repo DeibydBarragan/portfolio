@@ -5,4 +5,5 @@ export interface cardData {
   icon?: React.ReactNode | null,
   description: string,
   children?: React.ReactNode | null
+  index: number
 }

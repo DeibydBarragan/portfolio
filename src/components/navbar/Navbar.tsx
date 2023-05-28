@@ -5,16 +5,19 @@ import { routes } from './navbar.data'
 import DarkModeButton from './DarkModeButton'
 import MenuLinks from './MenuLinks'
 import { Link } from 'react-scroll'
-import { Menu } from '@headlessui/react'
 import { motion } from 'framer-motion'
-import { HiOutlineMenu } from 'react-icons/hi'
 
 type Props = {}
 
 export default function Navbar({}: Props) {
   return (
-    <nav className='fixed inset-x-0 z-20'>
-      <div className='flex p-3 justify-between bg-white/30 dark:bg-black/30 backdrop-blur-md 2xl:px-32 h-16'>
+    <motion.nav
+      className='fixed inset-x-0 z-20'
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.2 }}  
+    >
+      <div className='flex p-3 justify-between bg-gray-100/30 dark:bg-black/30 backdrop-blur-md 2xl:px-32 h-16'>
         <div className='flex gap-2 items-center'>
           {/* Menu links */}
           <MenuLinks routes={routes}/>
@@ -38,7 +41,7 @@ export default function Navbar({}: Props) {
         {/* Navigation links */}
         <div className='hidden md:flex md:gap-5 gap-10'>
           {routes.map((route, index) => (
-            <Navlink key={index} route={route}/>  
+            <Navlink key={index} index={index} route={route}/>  
           ))}
         </div>
         {/* Theme switcher */}
@@ -55,6 +58,6 @@ export default function Navbar({}: Props) {
           </Link>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   )
 }
