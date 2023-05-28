@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 type Props = {
   route: Route
-  index: number
+  index?: number
 }
 
 export default function Navlink({route, index}: Props) {
@@ -27,7 +27,7 @@ export default function Navlink({route, index}: Props) {
           y: 0
         }}
         transition={{
-          delay: 0.4 * index
+          delay: index ? index * 0.2 : 0.1
         }}
       >
         {route.name}  

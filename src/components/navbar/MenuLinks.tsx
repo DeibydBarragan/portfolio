@@ -37,7 +37,7 @@ export default function MenuLinks({routes}: Props) {
           className='flex flex-col absolute rounded-lg p-4 bg-white border dark:bg-black border-indigo-900'
         >
           {routes.map((route, index) => (
-            <Navlink key={index} route={route}/>
+            <Navlink index={index} key={index} route={route}/>
           ))}
         </Menu.Items>
       </Transition>

@@ -1,4 +1,4 @@
-import { SiJavascript, SiTypescript, SiCss3, SiHtml5, SiPhp, SiNodedotjs, SiExpress, SiLaravel, SiMysql, SiFirebase, SiReact, SiTailwindcss,SiBootstrap, SiNextdotjs, SiChakraui, SiGit, SiGithub, SiFigma, SiNpm, SiComposer, SiVisualstudiocode, SiNotion} from "react-icons/Si"
+import { SiJavascript, SiTypescript, SiCss3, SiHtml5, SiPhp, SiNodedotjs, SiExpress, SiLaravel, SiMysql, SiFirebase, SiReact, SiTailwindcss,SiBootstrap, SiNextdotjs, SiChakraui, SiGit, SiGithub, SiFigma, SiNpm, SiVisualstudiocode, SiNotion} from "react-icons/si"
 
 import { HiCode } from "react-icons/hi";
 import { HiServerStack, HiCube } from "react-icons/hi2";
@@ -19,7 +19,7 @@ export const categories = [
       {
         name: 'TypeScript',
         color: 'text-blue-600',
-        icon: <SiJavascript/>,
+        icon: <SiTypescript/>,
         level: 'Avanzado',
         version: 'ES6'
       },

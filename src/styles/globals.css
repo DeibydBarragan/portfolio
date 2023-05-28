@@ -15,7 +15,7 @@
 }
 
 .nav-icons {
-  @apply text-gray-500 text-3xl md:text-3xl hover:text-gray-800  active:scale-90 transition ease-in-out duration-200;
+  @apply text-gray-500 text-3xl md:text-3xl hover:text-gray-800  dark:hover:text-gray-200 active:scale-90 transition ease-in-out duration-200;
 }
 
 .nav-link {
@@ -24,8 +24,8 @@
 
 .btn {
   @apply font-semibold text-white
-  flex items-center
-  p-2 gap-2 w-fit
+  flex items-center justify-center
+  p-2 gap-2
   rounded-lg 
   active:scale-95
   active:opacity-90
@@ -49,6 +49,18 @@ body {
   @apply font-roboto
   bg-gray-100
   dark:bg-black;
+}
+
+.input-text {
+  @apply rounded-lg
+  p-2
+  bg-gray-200
+  dark:bg-zinc-950
+  focus:outline-none
+  focus:ring-2
+  focus:ring-purple-700
+  focus:border-transparent
+  transition ease-in-out duration-200;
 }
 
 .border-gradient {

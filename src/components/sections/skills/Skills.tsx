@@ -16,7 +16,7 @@ export default function Skills({}: Props) {
       id="skills"
     >
       <BgShapes
-        className="bg-purple-400 h-96 w-96"
+        className="bg-purple-400 dark:bg-teal-700 h-96 w-96"
       />
       <BgShapes
         className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-72 w-72 top-30 right-10"

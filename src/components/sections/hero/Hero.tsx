@@ -36,6 +36,8 @@ export default function Hero() {
           <Link
             className="btn bg-gradient-to-r from-indigo-700 to-orange-500"
             to="contact"
+            smooth={true}
+            duration={500}
           >
             Contáctame
             <HiMail className="text-xl"/>
