@@ -33,22 +33,25 @@ export default function Modal({isOpen, setIsOpen, children}: Props) {
           }}
         >
           <motion.div 
-            className="fixed inset-0 overflow-y-auto"
-            initial={{
-              scale:0.8,
-              y:10
-            }}
-            animate={{
-              scale:1,
-              y:0
-            }}
-            exit={{
-              scale:0.8,
-              y:10
-            }}  
+            className="fixed inset-0 overflow-y-auto"     
           >
             <div className="flex min-h-full items-center justify-center p-4 text-center">
-                <Dialog.Panel className="relative w-full max-w-md overflow-hidden rounded-2xl bg-white dark:bg-zinc-950 p-6 text-left align-middle shadow-xl">
+                <Dialog.Panel
+                  className="relative w-full max-w-md overflow-hidden rounded-2xl bg-white dark:bg-zinc-950 p-6 text-left align-middle shadow-xl"
+                  as={motion.div}
+                  initial={{
+                    scale:0.95,
+                    y:10
+                  }}
+                  animate={{
+                    scale:1,
+                    y:0
+                  }}
+                  exit={{
+                    scale:0.95,
+                    y:10
+                  }}
+                >
                   <button onClick={closeModal}>
                     <CgClose
                       className="absolute right-5 top-5 text-gray-400 hover:text-gray-500 transition ease-in-out"
