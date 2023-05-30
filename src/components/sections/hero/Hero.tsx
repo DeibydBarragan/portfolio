@@ -29,13 +29,13 @@ export default function Hero() {
           <a
             href="/files/CV.pdf" 
             download="CV.pdf"
-            className="btn bg-gradient-to-r from-indigo-700 to-orange-500"  
+            className="btn-gradient"  
           >
             Descargar CV
             <HiDocumentDownload className="text-xl"/>
           </a>
           <Link
-            className="btn bg-gradient-to-r from-indigo-700 to-orange-500"
+            className="btn-gradient"
             to="contact"
             smooth={true}
             duration={500}

@@ -55,7 +55,7 @@ export default function ContactForm({}: Props) {
       {/**Submit */}
       <button
         type='submit'
-        className='btn w-full bg-gradient-to-r from-indigo-700 to-orange-500'
+        className='btn-gradient w-full'
         aria-label='Enviar mensaje'
       >
         Enviar mensaje

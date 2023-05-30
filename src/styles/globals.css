@@ -23,14 +23,25 @@
 }
 
 .btn {
-  @apply font-semibold text-white
+  @apply font-semibold
   flex items-center justify-center
   p-2 gap-2
   rounded-lg 
   active:scale-95
-  active:opacity-90
   hover:cursor-pointer
   transition ease-in-out duration-200;
+}
+
+.btn-gradient {
+  @apply btn text-white bg-gradient-to-r from-indigo-800 via-purple-600 to-orange-600  hover:from-indigo-700 hover:via-purple-500 hover:to-orange-500;
+}
+
+.btn-primary {
+  @apply btn text-white bg-indigo-700 hover:bg-indigo-800;
+}
+
+.btn-primary-outline {
+  @apply btn border-2 border-indigo-700 bg-white hover:bg-indigo-700 text-indigo-700 hover:text-white;
 }
 
 h1 {
@@ -43,6 +54,10 @@ h2 {
 
 h3 {
   @apply font-lexend text-2xl
+}
+
+h4 {
+  @apply font-lexend font-semibold
 }
 
 body {

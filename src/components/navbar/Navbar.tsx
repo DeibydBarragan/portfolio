@@ -56,7 +56,7 @@ export default function Navbar({}: Props) {
           <i className='AiFillAlert'/>
           <DarkModeButton/>
           <Link
-            className='btn bg-indigo-600'
+            className='btn-primary'
             to='contact'
             smooth={true}
             duration={500}
