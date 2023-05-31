@@ -64,7 +64,7 @@ export default function Carousel({images, showButtons = true}: Props) {
             }}
           >
             <Image
-              src={`/images/${image}.png`}
+              src={`/images/${image}.webp`}
               alt='Nombre de projecto'
               width={1280}
               height={720}
