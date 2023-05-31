@@ -9,7 +9,7 @@ export const ProjectsData: Project[] = [
     shortDescription: 'Una lista de tareas con un diseño minimalista y elegante, con la capacidad de agregar, eliminar y marcar como completada cada tarea.',
     longDescription: 'Una lista de tareas con un diseño minimalista y elegante, con la capacidad de agregar, eliminar y marcar como completada cada tarea. Esta aplicación fue creada con React, Typescript y TailwindCSS. Para el manejo de estado se utilizó Redux Toolkit y para el manejo de rutas se utilizó React Router. Para el almacenamiento de datos se utilizó Firebase Firestore y para la autenticación de usuarios se utilizó Firebase Auth.',
     learned: 'En este proyecto aprendí a utilizar Redux Toolkit para el manejo de estado, React Router para el manejo de rutas, Firebase Firestore para el almacenamiento de datos y Firebase Auth para la autenticación de usuarios.',
-    mainLibraries: ['React-Router', 'React-Hook-Forms', 'Firebase Auth', 'Create-React-App'],
+    mainLibraries: ['React-Router', 'React-Hook-Forms', 'Firebase Auth', 'Create-React-App', 'Yup'],
     repository: 'https://github.com/DeibydBarragan/To-do-list.git',
     live: 'https://deibydbarragan.github.io/To-do-list/',
     technologies: [

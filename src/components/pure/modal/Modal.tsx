@@ -37,7 +37,7 @@ export default function Modal({isOpen, setIsOpen, children}: Props) {
           >
             <div className="flex min-h-full items-center justify-center p-4 text-center">
               <Dialog.Panel
-                className="relative w-full max-w-xl overflow-hidden rounded-2xl bg-white dark:bg-zinc-900 p-6 text-left align-middle shadow-xl"
+                className="relative w-full max-w-xl rounded-2xl bg-white dark:bg-zinc-900 p-6 text-left align-middle shadow-xl"
                 as={motion.div}
                 initial={{
                   scale:0.95,

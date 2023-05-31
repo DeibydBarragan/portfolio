@@ -2,11 +2,11 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 
 type Props = {
-  icon: React.ReactNode
+  children: React.ReactNode
   description: string
 }
 
-export default function IconTooltip({icon, description}: Props) {
+export default function Tooltip({description, children}: Props) {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleMouseEnter = () => {
@@ -23,14 +23,14 @@ export default function IconTooltip({icon, description}: Props) {
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}  
       >
-        {icon}
+        {children}
       </span>
       <AnimatePresence>
         {isOpen && (
           <motion.div
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className="text-sm mt-1 absolute top-full p-2 px-4 bg-black/50 dark:bg-gray-700/30 backdrop-blur-sm rounded-lg text-white text-center"
+            className="text-sm mt-1 w-max z-10 absolute top-full p-2 px-4 bg-black/50 dark:bg-gray-700/30 backdrop-blur-sm rounded-lg text-white text-center"
             initial={{
               opacity: 0,
               y: -10,

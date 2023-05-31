@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { SiJavascript, SiTypescript, SiCss3, SiHtml5, SiPhp, SiNodedotjs, SiExpress, SiLaravel, SiMysql, SiFirebase, SiReact, SiTailwindcss,SiBootstrap, SiNextdotjs, SiChakraui, SiGit, SiGithub, SiFigma, SiNpm, SiVisualstudiocode, SiNotion} from "react-icons/si"
+import { HiOutlineSelector } from 'react-icons/hi'
 import { MdPlaylistAddCheckCircle } from 'react-icons/md'
 import { VscLiveShare } from 'react-icons/vsc'
 import { useState } from 'react'
@@ -8,7 +8,8 @@ import { Dialog, Listbox } from '@headlessui/react'
 import Carousel from '@/components/pure/carousel/Carousel'
 import { Project } from './interfaces'
 import { motion } from 'framer-motion';
-import IconTooltip from '@/components/pure/iconTooltip/IconTooltip'
+import Tooltip from '@/components/pure/tooltip/Tooltip'
+import { SiGithub } from 'react-icons/si'
 
 type Props = {
   project: Project
@@ -76,11 +77,12 @@ export default function ProjectCard({index, project}: Props) {
           </p>
           <div className='flex gap-3 text-4xl'>
             {project.technologies.map((technology, index) => (
-              <IconTooltip
-                key={index}
-                icon={technology.icon}
+              <Tooltip
+                key={`${technology.name}0-${index}`}
                 description={`${technology.name} ${technology.version}`}
-              />
+              >
+                {technology.icon}
+              </Tooltip>
             ))}
           </div>
           <button
@@ -109,42 +111,57 @@ export default function ProjectCard({index, project}: Props) {
           <h4>Lenguajes y tecnologías usados</h4>
           <div className="flex gap-3 text-4xl">
             {project.technologies.map((technology) => (
-              <IconTooltip
-                key={"technology" + index}
-                icon={technology.icon}
+              <Tooltip
+                key={`${technology.name}-${index}`}
                 description={`${technology.name} ${technology.version}`}
-              />
+              >
+                {technology.icon}
+              </Tooltip>
             ))}
             {project.languages.map((language) => (
-              <IconTooltip
-                key={"language" + index}
-                icon={language.icon}
+              <Tooltip
+                key={`${language.name}-${index}`}
                 description={`${language.name} ${language.version}`}
-              />
+              >
+                {language.icon}
+              </Tooltip>
             ))}
           </div>
-          <h4>¿Qué aprendí?</h4>
-          <p className="text-sm text-gray-700 dark:text-gray-400">
-            {project.learned}
-          </p>
-          <Listbox>
-            <Listbox.Button className="btn bg-zinc-950">
-              Librerías y herramientas usadas
+          <Listbox as='div' className="relative">
+            <Listbox.Button className="rounded-lg flex justify-between items-center py-2 px-3 w-full active:scale-95 transition ease-in-out bg-gray-200 dark:bg-zinc-800">
+              <h4 className="text-sm sm:text-base">Librerías y herramientas usadas</h4>
+              <HiOutlineSelector size={25}/>
             </Listbox.Button>
-            <Listbox.Options>
+            <Listbox.Options 
+              className="absolute mt-2 text-sm text-gray-700 dark:text-gray-300 w-full bg-white dark:bg-zinc-800 rounded-lg px-3 border border-gray-300 dark:border-none shadow-lg divide-y dark:divide-zinc-700 flex flex-col"
+              as={motion.div}
+              initial={{
+                opacity:0,
+                y:-10
+              }}
+              animate={{
+                opacity:1,
+                y:0
+              }}
+            >
               {project.mainLibraries.map((library) => (
                 <Listbox.Option
-                  key={"library" + index}
+                  key={`${library}-${index}`}
                   value={library}
                   disabled
+                  className="py-3"
                 >
                   {library}
                 </Listbox.Option>
               ))}
             </Listbox.Options>
           </Listbox>
+          <h4>¿Qué aprendí?</h4>
+          <p className="text-sm text-gray-700 dark:text-gray-400">
+            {project.learned}
+          </p>
+          
         </div>
-
         <div className="flex w-full justify-end gap-4 mt-4">
           <a href={project.repository} target="_blank" rel="noopener noreferrer"
             className="btn-primary"
