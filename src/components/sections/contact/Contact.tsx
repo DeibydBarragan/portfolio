@@ -14,7 +14,7 @@ export default function Contact({}: Props) {
       id="contact"
     >
       <BgShapes
-        className="h-96 w-96 bg-violet-500 dark:bg-indigo-800 right-0 bottom-0 md:bottom-auto animate-blob"
+        className="h-96 w-96 bg-violet-500 dark:bg-indigo-800 right-0 bottom-0 md:bottom-auto"
       />
         <motion.div
           className="flex flex-col gap-3"

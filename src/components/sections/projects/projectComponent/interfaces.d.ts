@@ -4,7 +4,6 @@ export interface Technologies {
   name: string;
   icon: ReactNode;
   version?: string;
-  color: string;
 }
 export interface Project {
   name: string;

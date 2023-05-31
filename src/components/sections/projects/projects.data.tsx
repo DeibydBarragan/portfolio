@@ -1,6 +1,6 @@
 import { MdPlaylistAddCheckCircle } from "react-icons/md"
 import { Project } from "./projectComponent/interfaces"
-import { SiFirebase, SiJavascript, SiReact, SiTailwindcss } from "react-icons/si"
+import { SiFirebase, SiHtml5, SiJavascript, SiReact, SiTailwindcss } from "react-icons/si"
 
 export const ProjectsData: Project[] = [
   {
@@ -16,34 +16,29 @@ export const ProjectsData: Project[] = [
       {
         name: 'React',
         version: '17.0.2',
-        icon: <SiReact/>,
-        color: 'text-blue-500',
+        icon: <SiReact className='text-blue-500'/>,
       }, 
       {
         name: 'TailwindCSS',
         version: '2.2.7',
-        icon: <SiTailwindcss/>,
-        color: 'text-sky-500',
+        icon: <SiTailwindcss className='text-sky-500'/>,
       },
       {
         name: 'Firebase',
         version: '9.6.1',
-        icon: <SiFirebase/>,
-        color: 'text-yellow-500',
+        icon: <SiFirebase className='text-yellow-500'/>,
       }
     ],
     languages: [
       {
         name: 'Javascript',
         version: 'ES6',
-        icon: <SiJavascript/>,
-        color: 'text-yellow-500',
+        icon: <SiJavascript className='text-yellow-500'/>,
       },
       {
         name: 'HTML',
         version: '5',
-        icon: <SiJavascript/>,
-        color: 'text-red-500',
+        icon: <SiHtml5 className='text-red-500'/>,
       },
     ],
     images: [

@@ -23,7 +23,7 @@
 }
 
 .btn {
-  @apply font-semibold
+  @apply font-medium
   flex items-center justify-center
   p-2 gap-2
   rounded-lg 

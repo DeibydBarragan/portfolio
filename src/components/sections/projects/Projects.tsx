@@ -1,5 +1,6 @@
 import Section from "../Section"
 import ProjectCard from "./projectComponent/ProjectCard"
+import { ProjectsData } from "./projects.data"
 
 type Props = {}
 
@@ -10,7 +11,9 @@ export default function Projects({}: Props) {
       id="projects"
     >
       <h2>Projectos que he realizado</h2>
-      <ProjectCard/>
+      {ProjectsData.map((project, index) => (
+        <ProjectCard index={index} key={index} project={project}/>
+      ))}
     </Section>
   )
 }
