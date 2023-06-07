@@ -7,6 +7,7 @@ import { contactSchema } from './contactSchema';
 import Popover from '@/components/pure/popover/Popover';
 import emailjs from '@emailjs/browser';
 import { BiLoaderAlt } from 'react-icons/bi'
+import Toast from '@/components/pure/toast/Toast';
 
 type Props = {}
 
@@ -25,19 +26,28 @@ export default function ContactForm({}: Props) {
   const form = useRef<any>('')
 
   const [loading, setLoading] = useState(false)
+  const [message, setMessage] = useState<Message | null>(null)
 
   const { register, formState: { errors }, handleSubmit, clearErrors } = useForm({
     resolver: yupResolver(contactSchema)
   })
 
-  const onSubmit = (data: any) => {
+  const onSubmit = () => {
     setLoading(true)
     emailjs.sendForm('service_06ucv1i', 'template_weiezvo', form.current, 'ujWGQJntsXHdicI8X')
-      .then((result) => {
-          console.log(result.text)
+      .then(() => {
+          setMessage({
+            title: 'Mensaje enviado',
+            message: 'Tu mensaje ha sido enviado con exito, pronto me comunicaré contigo',
+            type: 'success'
+          })
       })
-      .catch((error) => {
-          console.log(error.text)
+      .catch(() => {
+          setMessage({
+            title: 'Error',
+            message: 'Ha ocurrido un error al enviar el mensaje',
+            type: 'error'
+          })
       })
       .finally(() => {
         setLoading(false)
@@ -106,6 +116,7 @@ export default function ContactForm({}: Props) {
           : <HiMail className="text-xl"/>  
         }
       </button>
+      <Toast message={message} setMessage={setMessage}/>
     </form>
   )
 }
