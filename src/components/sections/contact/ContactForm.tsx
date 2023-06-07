@@ -1,6 +1,12 @@
-import React from 'react'
+import { useRef, useState } from 'react'
 import { HiMail } from 'react-icons/hi'
 import { motion } from 'framer-motion';
+import { useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { contactSchema } from './contactSchema';
+import Popover from '@/components/pure/popover/Popover';
+import emailjs from '@emailjs/browser';
+import { BiLoaderAlt } from 'react-icons/bi'
 
 type Props = {}
 
@@ -16,50 +22,89 @@ export default function ContactForm({}: Props) {
     },
   }
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
+  const form = useRef<any>('')
+
+  const [loading, setLoading] = useState(false)
+
+  const { register, formState: { errors }, handleSubmit, clearErrors } = useForm({
+    resolver: yupResolver(contactSchema)
+  })
+
+  const onSubmit = (data: any) => {
+    setLoading(true)
+    emailjs.sendForm('service_06ucv1i', 'template_weiezvo', form.current, 'ujWGQJntsXHdicI8X')
+      .then((result) => {
+          console.log(result.text)
+      })
+      .catch((error) => {
+          console.log(error.text)
+      })
+      .finally(() => {
+        setLoading(false)
+      }
+    )
   }
 
   return (
     <form
-      className='flex flex-col gap-4'
-      onSubmit={handleSubmit}
+      className='flex flex-col gap-4 w-full mt-4'
+      onSubmit={handleSubmit(onSubmit)}
       aria-label='Formulario de contacto'
+      ref={form}
     >
       {/**Email */}
-      <motion.input
-        type="text"
-        aria-label='Tu correo electronico'
-        placeholder='Tu correo electronico'
-        className='input-text'
-        transition={{delay: 0.2}}
-        {...inputAnimation}
-      />
+      <Popover>
+        <motion.input
+          type="text"
+          aria-label='Tu correo electronico'
+          placeholder='Tu correo electronico'
+          className='input-text'
+          transition={{delay: 0.2}}
+          {...inputAnimation}
+          {...register('email')}
+          name='email'
+        />
+        <Popover.Message show={errors.email?.message} clear={clearErrors} fieldName='email'/>
+      </Popover>  
       {/**Subject */}
-      <motion.input
-        type="text"
-        aria-label='Asunto'
-        placeholder='Asunto'
-        className='input-text'
-        transition={{delay: 0.4}}
-        {...inputAnimation}
-      />
-      {/**Mensaje */}
-      <motion.textarea
-        placeholder='Mensaje'
-        aria-label='Mensaje'
-        className='input-text'
-        transition={{delay: 0.6}}
-        {...inputAnimation}
-      />
+      <Popover>
+        <motion.input
+          type="text"
+          aria-label='Asunto'
+          placeholder='Asunto'
+          className='input-text'
+          transition={{delay: 0.4}}
+          {...inputAnimation}
+          {...register('subject')}
+          name='subject'
+        />
+        <Popover.Message show={errors.subject?.message} clear={clearErrors} fieldName='subject'/>
+      </Popover>  
+      {/**Message */}
+      <Popover>
+        <motion.textarea
+          placeholder='Mensaje'
+          aria-label='Mensaje'
+          className='input-text'
+          transition={{delay: 0.6}}
+          {...inputAnimation}
+          {...register('message')}
+          name='message'
+        />
+        <Popover.Message show={errors.message?.message} clear={clearErrors} fieldName='message'/>
+      </Popover>
       {/**Submit */}
       <button
         type='submit'
-        className='btn-gradient w-full'
+        className='btn-gradient w-full disabled:opacity-75'
         aria-label='Enviar mensaje'
+        disabled={loading}
       >
         Enviar mensaje
-        <HiMail className="text-xl"/>
+        {loading 
+          ? <BiLoaderAlt className='animate-spin text-xl'/>
+          : <HiMail className="text-xl"/>  
+        }
       </button>
     </form>
   )

@@ -3,8 +3,9 @@ import { SiJavascript, SiTypescript, SiCss3, SiHtml5, SiPhp, SiNodedotjs, SiExpr
 import { HiCode } from "react-icons/hi";
 import { HiServerStack, HiCube } from "react-icons/hi2";
 import { BiCodeCurly } from "react-icons/bi";
+import { Categorie } from "./skillCard/interfaces";
 
-export const categories = [
+export const categories: Categorie[] = [
   {
     name: 'Lenguajes',
     icon: <BiCodeCurly/>,
@@ -12,15 +13,15 @@ export const categories = [
       {
         name: 'JavaScript',
         color: 'text-yellow-500',
-        icon: <SiJavascript/>,
-        level: 'Avanzado',
+        icon: <SiJavascript className="rounded-sm"/>,
+        level: 'Intermedio',
         version: 'ES6'
       },
       {
         name: 'TypeScript',
         color: 'text-blue-600',
         icon: <SiTypescript/>,
-        level: 'Avanzado',
+        level: 'Intermedio',
         version: 'ES6'
       },
       {
@@ -34,14 +35,14 @@ export const categories = [
         name: 'CSS',
         color: 'text-blue-500',
         icon: <SiCss3/>,
-        level: 'Avanzado',
+        level: 'Intermedio',
         version: '3'
       },
       {
         name: 'PHP',
         color: 'text-blue-600',
         icon: <SiPhp/>,
-        level: 'Intermedio',
+        level: 'Básico',
         version: '7'
       }
     ]
@@ -50,20 +51,6 @@ export const categories = [
     name: 'Backend',
     icon: <HiServerStack/>,
     skills: [
-      {
-        name: 'Node.js',
-        color: 'text-green-500',
-        icon: <SiNodedotjs/>,
-        level: 'Avanzado',
-        version: '18'
-      },
-      {
-        name: 'Express',
-        color: 'text-green-500',
-        icon: <SiExpress/>,
-        level: 'Avanzado',
-        version: '4'
-      },
       {
         name: 'Laravel',
         color: 'text-red-500',
@@ -75,7 +62,7 @@ export const categories = [
         name: 'MySQL',
         color: 'text-blue-500',
         icon: <SiMysql/>,
-        level: 'Intermedio',
+        level: 'Básico',
         version: '8'
       },
       {
@@ -109,7 +96,7 @@ export const categories = [
         name: 'Bootstrap',
         color: 'text-purple-500',
         icon: <SiBootstrap/>,
-        level: 'Intermedio',
+        level: 'Básico',
         version: '8'
       },
       {
@@ -123,7 +110,7 @@ export const categories = [
         name: 'ChakraUI',
         color: 'text-teal-400',
         icon: <SiChakraui/>,
-        level: 'Avanzado',
+        level: 'Intermedio',
       },
     ]
   },
@@ -142,13 +129,13 @@ export const categories = [
         name: 'Github',
         color: 'text-black dark:text-white',
         icon: <SiGithub/>,
-        level: 'Avanzado',
+        level: 'Intermedio',
       },
       {
         name: 'Figma',
         color: 'text-purple-500',
         icon: <SiFigma/>,
-        level: 'Principiante',
+        level: 'Básico',
         version: '7'
       },
       {

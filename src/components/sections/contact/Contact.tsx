@@ -10,7 +10,7 @@ type Props = {}
 export default function Contact({}: Props) {
   return (
     <Section
-      className="grid grid-cols-1 gap-8 md:grid-cols-2 md:flex-row items-center md:w-9/12 lg:w-7/12 2xl:w-6/12"
+      className="md:grid grid-cols-1 md:grid-cols-2 md:flex-row items-center md:w-9/12 lg:w-7/12 2xl:w-6/12"
       id="contact"
     >
       <BgShapes
@@ -48,9 +48,7 @@ export default function Contact({}: Props) {
             </a>
           </div>
         </motion.div>
-        <div>
-          <ContactForm/>
-        </div>
+        <ContactForm/>
     </Section>
   )
 }

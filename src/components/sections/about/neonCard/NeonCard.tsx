@@ -1,7 +1,7 @@
 import { cardData } from './interfaces';
 import { motion } from 'framer-motion';
 
-export default function NeonCard({index, borderColor = null, shadowColor = null, textColor = null, icon = null, description, children = null}: cardData) {
+export default function NeonCard({index, icon = null, description}: cardData) {
 
   return (
     <motion.div
@@ -11,8 +11,7 @@ export default function NeonCard({index, borderColor = null, shadowColor = null,
       transition={{ delay: 0.4 * index }}  
     >
       {description}
-      <div className={`${textColor} text-2xl`}>
-        {children}
+      <div className='text-2xl'>
         {icon}
       </div>
     </motion.div>

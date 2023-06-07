@@ -42,11 +42,16 @@ export default function Education({}: Props) {
             {...liAnimation}
           >
             <AiFillRightCircle className="text-5xl md:text-3xl text-indigo-700"/>
-            <p>
-              Técnico en programación de software en formación(3er trimestre)
-              <br/>Servicio Nacional de Aprendizaje (SENA)
-              <br/>En proceso de certificación
-            </p>
+            <div>
+              <span className='font-semibold'>
+                Técnico en programación de software
+              </span>
+              <p>
+                Servicio Nacional de Aprendizaje (SENA)
+                <br/>En proceso de certificación
+                <br/>2022- 2023
+              </p>
+            </div>
           </motion.div>
           <hr/>
           <motion.div
@@ -55,11 +60,15 @@ export default function Education({}: Props) {
             {...liAnimation}
           >
             <AiFillRightCircle className="text-5xl md:text-3xl text-indigo-700"/>
-            <p>
-              Bachiller técnico con énfasis en gestión de proyectos culturales
-              <br/>Colegio El Porvenir IED (Bogotá D.C)
-              <br/>2020
-            </p>
+            <div>
+              <span className='font-semibold'>
+                Bachiller técnico con énfasis en gestión de proyectos culturales
+              </span>
+              <p>
+                Colegio El Porvenir IED (Bogotá D.C)
+                <br/>2020
+              </p>
+            </div>
           </motion.div>
         </div>
       <h2>Experiencia</h2>
@@ -69,12 +78,21 @@ export default function Education({}: Props) {
             transition={{delay: 0.9}}
             {...liAnimation}
           >
-            <AiFillRightCircle className="text-5xl md:text-3xl text-indigo-700"/>
-            <p>
-              Técnico en programación de software en formación(3er trimestre)
-              <br/>Servicio Nacional de Aprendizaje (SENA)
-              <br/>En proceso de certificación
-            </p>
+            <div>
+              <AiFillRightCircle className="text-5xl md:text-3xl text-indigo-700"/>
+            </div>
+            <div>
+              <span className='font-semibold'>
+                Desarrollo de proyectos de software personales - 5 meses
+              </span>
+              <p>
+                En mi tiempo libre, he estado enfocado en desarrollar proyectos personales para 
+                aprender diferentes tecnologías. He trabajado con herramientas como NextJS, React
+                , Tailwind y Firebase. Me apasiona seguir aprendiendo y mejorando mis habilidades 
+                técnicas, y estos proyectos me han permitido hacer precisamente eso, mientras 
+                desarrollo soluciones creativas y prácticas.
+              </p>
+            </div>
           </motion.div>
         </div>
     </Section>

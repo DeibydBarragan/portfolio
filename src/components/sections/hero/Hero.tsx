@@ -21,9 +21,9 @@ export default function Hero() {
       />
       <div className="flex flex-col gap-3">
         <h3>Debyd Barragán</h3>
-        <h1>Desarrollador fullstack</h1>
+        <h1>Desarrollador front-end</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur. Eget suspendisse suspendisse dui scelerisque at. Sit et in urna enim tincidunt eu massa cras. Elementum facilisi at faucibus nunc. Accumsan placerat rhoncus nulla volutpat pellentesque laoreet. 
+        Soy un desarrollador web front-end con experiencia en NextJS, React, JavaScript, TypeScript, Tailwind, etc. Capaz de desarrollar y mantener aplicaciones web complejas y responsivas buscando siempre la mejor experiencia de usuario, me apasiona lo que hago y siempre busco aprender y mejorar.
         </p>
         <div className="flex gap-3">
           <a

@@ -17,7 +17,7 @@ export default function About() {
       >
         <h2>Sobre mí</h2>
         <p>
-          I am a full-stack web developer with experience in React, JavaScript, HTML, CSS, Tailwind, Bootstrap, Laravel, and relational database management with SQL, as well as Agile methodologies. I am capable of developing and maintaining complex web applications using a combination of cutting-edge technologies and proven development practices. Additionally, I am passionate about learning and constantly improving, always seeking to update my skills and expand my knowledge in the field of web development. My strong communication skills and problem-solving abilities make me a valuable team member, able to effectively communicate technical concepts and find creative solutions to challenges.
+          Soy un desarrollador web font-end con experiencia en NextJS, React, JavaScript, TypeScript, Tailwind, HTML, CSS, Bootstrap, Laravel y manejo de bases de datos relacionales con SQL así como no relacionales como Firebase. Soy capaz de desarrollar y mantener aplicaciones web complejas usando una combinación de tecnologías de punta y buenas prácticas de desarrollo buscando siempre la mejor experiencia de usuario. Adicionalmente, me apasiona aprender y mejorar constantemente, buscando siempre actualizar mis habilidades y ampliar mis conocimientos en el campo del desarrollo web. Mis fuertes habilidades de comunicación y habilidades para resolver problemas me convierten en un miembro valioso del equipo, capaz de comunicar conceptos técnicos de manera efectiva y encontrar soluciones creativas a los desafíos.
         </p>
       </motion.div>
       <div className="relative grid grid-cols-1  sm:grid-cols-2 gap-3">
