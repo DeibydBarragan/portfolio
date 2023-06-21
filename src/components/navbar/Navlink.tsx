@@ -1,6 +1,7 @@
 import { Link } from 'react-scroll'
 import { Route } from './interfaces'
 import { motion } from 'framer-motion';
+import { fadeIn, flyUp } from '@/animations/anim';
 
 type Props = {
   route: Route
@@ -15,20 +16,11 @@ export default function Navlink({route, index}: Props) {
       smooth={true}
       duration={500}
       spy={true}
-      activeClass='bg-white dark:bg-zinc-800 dark:text-white outline outline-1 outline-gray-300 dark:outline-none'
     >
       <motion.span
-        initial={{
-          opacity: 0,
-          y: -10
-        }}
-        animate={{
-          opacity: 1,
-          y: 0
-        }}
-        transition={{
-          delay: index ? index * 0.2 : 0.1
-        }}
+        transition={{delay: index ? 0.4 * index : 0}}
+        {...flyUp}
+        {...fadeIn}
       >
         {route.name}  
       </motion.span>

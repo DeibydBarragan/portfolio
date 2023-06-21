@@ -36,7 +36,7 @@ export default function Carousel({images, showButtons = true}: Props) {
   }, [currentSlide])
 
   return (
-    <div className="flex justify-center items-center overflow-hidden relative">
+    <div className="flex w-full justify-center items-center relative">
       {showButtons && (
         <>
           <button className="absolute left-0 text-gray-200 hover:text-gray-300 text-4xl transition ease-in-out z-10" onClick={onLeft}>
@@ -47,33 +47,17 @@ export default function Carousel({images, showButtons = true}: Props) {
           </button>
         </>
       )}
-      <div className="w-full h-60">
         {images.map((image, index) => (
-          <motion.div
-            key={index}
-            className="absolute top-0 left-0 w-full h-full"
-            initial={{
-              opacity: currentSlide === index ? 1 : 0,
-            }}
-            animate={{
-              opacity: currentSlide === index ? 1 : 0,
-              transition: {
-                duration: 0.5,
-                ease: 'easeInOut',
-              },
-            }}
-          >
             <Image
+              key={index}
               src={`/images/${image}.webp`}
               alt='Nombre de projecto'
               width={1280}
               height={720}
               quality={90}
-              className='w-full h-full object-cover rounded-2xl'
+              className={`w-full h-auto rounded-2xl transition ease-in-out duration-300 ${index === currentSlide ? 'opacity-100' : 'absolute opacity-0'}`}
             />
-          </motion.div>
         ))}
-      </div>
     </div>
   )
 }

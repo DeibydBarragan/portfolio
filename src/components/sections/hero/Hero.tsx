@@ -2,15 +2,16 @@ import Image from "next/image"
 import { HiDocumentDownload, HiMail } from "react-icons/hi"
 import { Link } from "react-scroll"
 import Section from "../Section"
+import { fadeIn, flyUp } from "@/animations/anim"
+import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
     <Section
       className="md:flex-row items-center gap-6 md:w-9/12 lg:w-7/12 2xl:w-6/12"
       id="hero"
-      initial={{opacity: 0, y:10}}
-      whileInView={{opacity: 1, y: 0}}
       transition={{delay: 0.5}}
+      {...fadeIn}
     >
       <Image
         src="/images/foto.webp"
@@ -20,12 +21,28 @@ export default function Hero() {
         className="rounded-full"
       />
       <div className="flex flex-col gap-3">
-        <h3>Debyd Barragán</h3>
-        <h1>Desarrollador front-end</h1>
-        <p>
+        <motion.h3
+          transition={{delay: 0.5}}
+          {...flyUp}
+        >
+          Debyd Barragán
+        </motion.h3>
+        <motion.h1
+          transition={{delay: 0.8}}
+          {...flyUp}
+        >
+          Desarrollador front-end
+        </motion.h1>
+        <motion.p
+          transition={{delay: 1.1}}
+          {...flyUp}
+        >
         Soy un desarrollador web front-end con experiencia en NextJS, React, JavaScript, TypeScript, Tailwind, etc. Capaz de desarrollar y mantener aplicaciones web complejas y responsivas buscando siempre la mejor experiencia de usuario, me apasiona lo que hago y siempre busco aprender y mejorar.
-        </p>
-        <div className="flex gap-3">
+        </motion.p>
+        <motion.div className="flex gap-3"
+          transition={{delay: 1.6}}
+          {...fadeIn}
+        >
           <a
             href="/files/CV.pdf" 
             download="CV.pdf"
@@ -43,7 +60,7 @@ export default function Hero() {
             Contáctame
             <HiMail className="text-xl"/>
           </Link>
-        </div>
+        </motion.div>
       </div>
     </Section>
   )

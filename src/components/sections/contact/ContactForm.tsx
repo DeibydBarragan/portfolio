@@ -1,27 +1,18 @@
 import { useRef, useState } from 'react'
 import { HiMail } from 'react-icons/hi'
-import { motion } from 'framer-motion';
-import { useForm } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { contactSchema } from './contactSchema';
-import Popover from '@/components/pure/popover/Popover';
-import emailjs from '@emailjs/browser';
+import { motion } from 'framer-motion'
+import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup'
+import { contactSchema } from './contactSchema'
+import Popover from '@/components/pure/popover/Popover'
+import emailjs from '@emailjs/browser'
 import { BiLoaderAlt } from 'react-icons/bi'
-import Toast from '@/components/pure/toast/Toast';
+import Toast from '@/components/pure/toast/Toast'
+import { flyUp } from '@/animations/anim'
 
 type Props = {}
 
 export default function ContactForm({}: Props) {
-  const inputAnimation = {
-    initial: {
-      opacity: 0,
-      y: 10
-    },
-    whileInView: {
-      opacity: 1,
-      y: 0
-    },
-  }
 
   const form = useRef<any>('')
 
@@ -32,28 +23,31 @@ export default function ContactForm({}: Props) {
     resolver: yupResolver(contactSchema)
   })
 
-  const onSubmit = () => {
-    setLoading(true)
-    emailjs.sendForm('service_06ucv1i', 'template_weiezvo', form.current, 'ujWGQJntsXHdicI8X')
-      .then(() => {
-          setMessage({
-            title: 'Mensaje enviado',
-            message: 'Tu mensaje ha sido enviado con exito, pronto me comunicaré contigo',
-            type: 'success'
-          })
+  const onSubmit = async () => {
+    try {
+      setLoading(true)
+      await emailjs.sendForm(
+        'service_06ucv1i',
+        'template_weiezvo',
+        form.current,
+        'ujWGQJntsXHdicI8X'
+      )
+      setMessage({
+        title: 'Mensaje enviado',
+        message: 'Tu mensaje ha sido enviado con éxito, pronto me comunicaré contigo',
+        type: 'success',
       })
-      .catch(() => {
-          setMessage({
-            title: 'Error',
-            message: 'Ha ocurrido un error al enviar el mensaje',
-            type: 'error'
-          })
+    } catch (error) {
+      setMessage({
+        title: 'Error',
+        message: 'Ha ocurrido un error al enviar el mensaje',
+        type: 'error',
       })
-      .finally(() => {
-        setLoading(false)
-      }
-    )
+    } finally {
+      setLoading(false)
+    }
   }
+  
 
   return (
     <form
@@ -70,7 +64,7 @@ export default function ContactForm({}: Props) {
           placeholder='Tu correo electronico'
           className='input-text'
           transition={{delay: 0.2}}
-          {...inputAnimation}
+          {...flyUp}
           {...register('email')}
           name='email'
         />
@@ -84,7 +78,7 @@ export default function ContactForm({}: Props) {
           placeholder='Asunto'
           className='input-text'
           transition={{delay: 0.4}}
-          {...inputAnimation}
+          {...flyUp}
           {...register('subject')}
           name='subject'
         />
@@ -97,7 +91,7 @@ export default function ContactForm({}: Props) {
           aria-label='Mensaje'
           className='input-text'
           transition={{delay: 0.6}}
-          {...inputAnimation}
+          {...flyUp}
           {...register('message')}
           name='message'
         />

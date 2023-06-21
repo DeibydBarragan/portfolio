@@ -1,3 +1,4 @@
+import { flyDownAndUp } from '@/animations/anim'
 import { AnimatePresence, motion } from 'framer-motion'
 import { useState } from 'react'
 
@@ -31,18 +32,7 @@ export default function Tooltip({description, children}: Props) {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             className="text-sm mt-1 w-max z-10 absolute top-full p-2 px-4 bg-black/50 dark:bg-gray-700/30 backdrop-blur-sm rounded-lg text-white text-center"
-            initial={{
-              opacity: 0,
-              y: -10,
-            }}
-            animate={{
-              opacity: 1,
-              y: 0,
-            }}
-            exit={{
-              opacity: 0,
-              y: 10
-            }}
+            {...flyDownAndUp}
           >
             {description}
           </motion.div>

@@ -4,6 +4,7 @@ import { HiMail } from "react-icons/hi"
 import ContactForm from "./ContactForm"
 import BgShapes from "@/components/pure/bgShapes/BgShapes"
 import { motion } from 'framer-motion';
+import { flyRight } from "@/animations/anim"
 
 type Props = {}
 
@@ -18,18 +19,11 @@ export default function Contact({}: Props) {
       />
         <motion.div
           className="flex flex-col gap-3"
-          initial={{
-            opacity: 0,
-            x: -10
-          }}
-          whileInView={{
-            opacity: 1,
-            x: 0
-          }}
           transition={{
             delay: 0.2,
             duration: 0.4
           }}
+          {...flyRight}
         >
           <h2>Contáctame</h2>
           <h3>Trabajemos juntos</h3>

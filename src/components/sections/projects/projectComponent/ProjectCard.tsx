@@ -10,6 +10,7 @@ import { Project } from './interfaces'
 import { motion } from 'framer-motion';
 import Tooltip from '@/components/pure/tooltip/Tooltip'
 import { SiGithub } from 'react-icons/si'
+import { flyLeft, flyRight } from '@/animations/anim'
 
 type Props = {
   project: Project
@@ -22,20 +23,13 @@ export default function ProjectCard({index, project}: Props) {
   return (
     <>
       <motion.div className={`flex flex-col sm:flex-row gap-6 ${index % 2 !== 0 && 'sm:flex-row-reverse'}`}
-        initial={{
-          opacity: 0,
-          x: index % 2 === 0 ? -100 : 100,
-        }}
-        whileInView={{
-          opacity: 1,
-          x: 0,
-        }}
         transition={{
           duration: 0.3,
           delay: 0.3 * index,
         }}
+        {...index % 2 === 0 ? flyRight : flyLeft}
       >
-        <div className='relative rounded w-full  sm:w-8/12 h-60'>
+        <div className='relative rounded w-full  sm:w-8/12 h-min'>
           <Carousel
             showButtons={false}
             images={project.images}

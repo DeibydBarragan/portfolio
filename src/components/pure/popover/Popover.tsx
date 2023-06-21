@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
+import { flyDown } from '@/animations/anim'
 
 type Props = {
   show: any,
@@ -37,9 +38,7 @@ const PopoverMessage = ({ show, clear, fieldName }: Props) => {
     <AnimatePresence>
       { show && (
         <motion.div className="absolute z-20 top-12 right-1 w-auto px-4 py-2 bg-white/40 backdrop-blur-md border-red-400 dark:border-zinc-800 dark:bg-black/40 border rounded-lg shadow-lg"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0, transition: { duration: 0.2 } }}
-          exit={{ opacity: 0, y: -10, transition: { duration: 0.2 } }}
+          {...flyDown}
         >
           <p className='text-red-600 dark:text-red-600 font-medium break-words text-md'>{ show.toString() }</p>
         </motion.div>)}

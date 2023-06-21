@@ -1,3 +1,4 @@
+import { fadeIn, flyUp } from '@/animations/anim'
 import { Dialog } from '@headlessui/react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { CgClose } from 'react-icons/cg'
@@ -22,15 +23,7 @@ export default function Modal({isOpen, setIsOpen, children}: Props) {
           open={isOpen}
           onClose={closeModal}
           as={motion.div}
-          initial={{
-            opacity:0
-          }}
-          animate={{
-            opacity:1
-          }}
-          exit={{
-            opacity:0
-          }}
+          {...fadeIn}
         >
           <motion.div 
             className="fixed inset-0 overflow-y-auto"     
@@ -39,18 +32,7 @@ export default function Modal({isOpen, setIsOpen, children}: Props) {
               <Dialog.Panel
                 className="relative w-full max-w-xl rounded-2xl bg-white dark:bg-zinc-900 p-6 text-left align-middle shadow-xl"
                 as={motion.div}
-                initial={{
-                  scale:0.95,
-                  y:10
-                }}
-                animate={{
-                  scale:1,
-                  y:0
-                }}
-                exit={{
-                  scale:0.95,
-                  y:10
-                }}
+                {...flyUp}
               >
                 <button onClick={closeModal}>
                   <CgClose

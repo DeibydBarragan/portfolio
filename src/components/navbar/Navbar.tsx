@@ -6,6 +6,7 @@ import DarkModeButton from './DarkModeButton'
 import MenuLinks from './MenuLinks'
 import { Link } from 'react-scroll'
 import { motion } from 'framer-motion'
+import { fadeIn } from '@/animations/anim'
 
 type Props = {}
 
@@ -13,9 +14,8 @@ export default function Navbar({}: Props) {
   return (
     <motion.nav
       className='fixed inset-x-0 z-20'
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.2 }}  
+      transition={{ delay: 0.2 }} 
+      {...fadeIn} 
     >
       <div className='flex p-3 justify-between bg-gray-100/30 dark:bg-black/30 backdrop-blur-md 2xl:px-32 h-16'>
         <div className='flex gap-2 items-center'>

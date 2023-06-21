@@ -1,4 +1,4 @@
-import { SiJavascript, SiTypescript, SiCss3, SiHtml5, SiPhp, SiNodedotjs, SiExpress, SiLaravel, SiMysql, SiFirebase, SiReact, SiTailwindcss,SiBootstrap, SiNextdotjs, SiChakraui, SiGit, SiGithub, SiFigma, SiNpm, SiVisualstudiocode, SiNotion} from "react-icons/si"
+import { SiJavascript, SiTypescript, SiCss3, SiHtml5, SiPhp, SiNodedotjs, SiExpress, SiLaravel, SiMysql, SiFirebase, SiReact, SiTailwindcss,SiBootstrap, SiNextdotjs, SiChakraui, SiGit, SiGithub, SiFigma, SiNpm, SiVisualstudiocode, SiNotion, SiDaisyui} from "react-icons/si"
 
 import { HiCode } from "react-icons/hi";
 import { HiServerStack, HiCube } from "react-icons/hi2";
@@ -59,19 +59,19 @@ export const categories: Categorie[] = [
         version: '8'
       },
       {
-        name: 'MySQL',
-        color: 'text-blue-500',
-        icon: <SiMysql/>,
-        level: 'Básico',
-        version: '8'
-      },
-      {
         name: 'Firebase',
         color: 'text-yellow-500',
         icon: <SiFirebase/>,
         level: 'Intermedio',
         version: '9.6'
       },
+      {
+        name: 'MySQL',
+        color: 'text-blue-500',
+        icon: <SiMysql/>,
+        level: 'Básico',
+        version: '8'
+      },  
     ]
   },
   {
@@ -93,13 +93,6 @@ export const categories: Categorie[] = [
         version: '3'
       },
       {
-        name: 'Bootstrap',
-        color: 'text-purple-500',
-        icon: <SiBootstrap/>,
-        level: 'Básico',
-        version: '8'
-      },
-      {
         name: 'NextJS',
         color: 'text-black dark:text-white',
         icon: <SiNextdotjs/>,
@@ -111,6 +104,19 @@ export const categories: Categorie[] = [
         color: 'text-teal-400',
         icon: <SiChakraui/>,
         level: 'Intermedio',
+      },
+      {
+        name: 'DaisyUI',
+        color: '',
+        icon: <SiDaisyui/>,
+        level: 'Básico'
+      },
+      {
+        name: 'Bootstrap',
+        color: 'text-purple-500',
+        icon: <SiBootstrap/>,
+        level: 'Básico',
+        version: '8'
       },
     ]
   },
