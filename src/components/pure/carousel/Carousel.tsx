@@ -6,10 +6,11 @@ import { HiChevronLeft, HiChevronRight } from 'react-icons/hi'
 type Props = {
   location: string
   imagesNumber: number
+  alt: string
   showButtons?: boolean
 }
 
-export default function Carousel({location, imagesNumber, showButtons = true}: Props) {
+export default function Carousel({location, imagesNumber, alt, showButtons = true}: Props) {
   const images = numberToStringArray(imagesNumber)
   const [currentSlide, setCurrentSlide] = useState(0)
 
@@ -52,10 +53,10 @@ export default function Carousel({location, imagesNumber, showButtons = true}: P
             <Image
               key={index}
               src={`/images/${location}/${image}.webp`}
-              alt='Nombre de projecto'
-              width={1280}
-              height={720}
-              quality={90}
+              alt={alt}
+              width={720}
+              height={480}
+              quality={100}
               className={`w-full h-auto rounded-2xl transition ease-in-out duration-300 ${index === currentSlide ? 'opacity-100' : 'absolute opacity-0'}`}
             />
         ))}

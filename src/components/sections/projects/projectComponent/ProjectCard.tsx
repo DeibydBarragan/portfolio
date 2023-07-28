@@ -34,6 +34,7 @@ export default function ProjectCard({index, project}: Props) {
             showButtons={false}
             location={project.imagesLocation}
             imagesNumber={project.imagesNumber}
+            alt={`${project.name} imagenes`}
           />
           <div className='absolute bottom-0 p-2 w-full z-10 flex justify-between items-center bg-black/20 backdrop-blur-sm rounded-b-2xl text-white'>
             <div className="flex gap-3 items-center">
@@ -101,6 +102,7 @@ export default function ProjectCard({index, project}: Props) {
         <Carousel
           location={project.imagesLocation}
           imagesNumber={project.imagesNumber}
+          alt={`${project.name} imagenes`}
         />
         <div className="flex flex-col gap-3 mt-6">
           <Disclosure>
