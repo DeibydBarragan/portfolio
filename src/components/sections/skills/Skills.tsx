@@ -35,9 +35,6 @@ export default function Skills({}: Props) {
                     && "bg-indigo-500 text-white dark:bg-indigo-700 dark:text-white outline-none"
                 )
               }
-              initial={{ opacity: 0, y: -10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 * index }}
             >
               <span className="text-xl">
                 {category.icon}

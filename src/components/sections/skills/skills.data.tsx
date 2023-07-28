@@ -78,7 +78,7 @@ export const categories: Categorie[] = [
         color: 'text-red-500',
         icon: <SiLaravel/>,
         level: 'Fundamentos',
-        version: '8'
+        version: '9'
       },
       {
         name: 'Firebase',

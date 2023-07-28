@@ -8,7 +8,7 @@ import Popover from '@/components/pure/popover/Popover'
 import emailjs from '@emailjs/browser'
 import { BiLoaderAlt } from 'react-icons/bi'
 import Toast from '@/components/pure/toast/Toast'
-import { flyUp } from '@/animations/anim'
+import { fadeIn } from '@/animations/anim'
 
 type Props = {}
 
@@ -64,7 +64,7 @@ export default function ContactForm({}: Props) {
           placeholder='Tu correo electronico'
           className='input-text'
           transition={{delay: 0.2}}
-          {...flyUp}
+          {...fadeIn}
           {...register('email')}
           name='email'
         />
@@ -78,7 +78,7 @@ export default function ContactForm({}: Props) {
           placeholder='Asunto'
           className='input-text'
           transition={{delay: 0.4}}
-          {...flyUp}
+          {...fadeIn}
           {...register('subject')}
           name='subject'
         />
@@ -91,7 +91,7 @@ export default function ContactForm({}: Props) {
           aria-label='Mensaje'
           className='input-text'
           transition={{delay: 0.6}}
-          {...flyUp}
+          {...fadeIn}
           {...register('message')}
           name='message'
         />

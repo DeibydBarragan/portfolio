@@ -31,13 +31,13 @@ export default function Contact({}: Props) {
             Gracias por llegar hasta aquí, si piensas que puedo aportar valor a tu equipo puedes contactarte conmigo a través de este formulario o a través de mis redes sociales. También puedes enviar un correo a deibydbarragan@gmail.com
           </p>
           <div className="flex gap-4 text-5xl">
-            <a className="cursor-pointer text-blue-600" href='https://www.linkedin.com/in/deibyd-barragan-68b59018b/' target='_blank'>
+            <a className="cursor-pointer text-blue-600 hover:opacity-80 transition ease-in-out" href='https://www.linkedin.com/in/deibyd-barragan-68b59018b/' target='_blank'>
               <SiLinkedin/>
             </a>
-            <a className="text-green-500 cursor-pointer" href='https://wa.link/79ptyy' target='_blank'>
+            <a className="text-green-500 cursor-pointer hover:opacity-80 transition ease-in-out" href='https://wa.link/79ptyy' target='_blank'>
               <SiWhatsapp/>
             </a>
-            <a className="cursor-pointer" href="mailto:deibydbarragan@gmail.com">
+            <a className="cursor-pointer hover:opacity-80 transition ease-in-out" href="mailto:deibydbarragan@gmail.com">
               <HiMail/>
             </a>
           </div>

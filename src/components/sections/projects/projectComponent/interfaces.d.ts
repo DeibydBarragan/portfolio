@@ -9,12 +9,13 @@ export interface Project {
   name: string;
   icon: ReactNode;
   repository: string;
-  live: string;
+  live?: string;
   shortDescription: string;
   longDescription: string;
   technologies: Technologies[];
   languages: Technologies[];
   learned: string;
-  mainLibraries: string[];
-  images: string[];
+  mainLibraries?: string[];
+  imagesLocation: string;
+  imagesNumber: number;
 }

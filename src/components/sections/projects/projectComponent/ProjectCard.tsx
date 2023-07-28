@@ -1,10 +1,10 @@
 import Image from 'next/image'
-import { HiOutlineSelector } from 'react-icons/hi'
+import { HiChevronDown, HiOutlineSelector } from 'react-icons/hi'
 import { MdPlaylistAddCheckCircle } from 'react-icons/md'
 import { VscLiveShare } from 'react-icons/vsc'
 import { useState } from 'react'
 import Modal from '@/components/pure/modal/Modal'
-import { Dialog, Listbox } from '@headlessui/react'
+import { Dialog, Disclosure, Listbox } from '@headlessui/react'
 import Carousel from '@/components/pure/carousel/Carousel'
 import { Project } from './interfaces'
 import { motion } from 'framer-motion';
@@ -32,7 +32,8 @@ export default function ProjectCard({index, project}: Props) {
         <div className='relative rounded w-full  sm:w-8/12 h-min'>
           <Carousel
             showButtons={false}
-            images={project.images}
+            location={project.imagesLocation}
+            imagesNumber={project.imagesNumber}
           />
           <div className='absolute bottom-0 p-2 w-full z-10 flex justify-between items-center bg-black/20 backdrop-blur-sm rounded-b-2xl text-white'>
             <div className="flex gap-3 items-center">
@@ -51,16 +52,18 @@ export default function ProjectCard({index, project}: Props) {
                 </span>
                 <SiGithub size={25} className="sm:hidden"/>
               </a>
-              <a
-                href={project.live} target="_blank" rel="noopener noreferrer"
-                className="btn-primary"
-                aria-label='Ver en vivo'  
-              >
-                <span className="hidden sm:block">
-                  Ver en vivo
-                </span>
-                <VscLiveShare size={25} className="sm:hidden"/>
-              </a>
+              {project.live && (
+                <a
+                  href={project.live} target="_blank" rel="noopener noreferrer"
+                  className="btn-primary"
+                  aria-label='Ver en vivo'  
+                >
+                    <span className="hidden sm:block">
+                      Ver en vivo
+                    </span>
+                  <VscLiveShare size={25} className="sm:hidden"/>
+                </a>
+              )}
             </div>
           </div>
         </div>
@@ -96,12 +99,26 @@ export default function ProjectCard({index, project}: Props) {
         </Dialog.Title>
         {/**Carrousel */}
         <Carousel
-          images={project.images}
+          location={project.imagesLocation}
+          imagesNumber={project.imagesNumber}
         />
-        <div className="flex flex-col gap-3 mt-2">
-          <p className="text-sm text-gray-700 dark:text-gray-400">
-            {project.longDescription}
-          </p>
+        <div className="flex flex-col gap-3 mt-6">
+          <Disclosure>
+            {({ open }) => (
+              <>
+                <Disclosure.Button className="rounded-lg flex justify-between items-center py-2 px-3 w-full transition ease-in-out bg-gray-200 hover:bg-indigo-200 dark:bg-slate-800">
+                  <h4 className="text-sm sm:text-base">Descripción</h4>
+                  <HiChevronDown
+                    size={25}
+                    className={open ? 'rotate-180 transform' : ''}
+                  />
+                </Disclosure.Button>
+                <Disclosure.Panel className="text-sm text-gray-700 dark:text-gray-400">
+                  {project.longDescription}
+                </Disclosure.Panel>
+              </>
+            )}
+          </Disclosure>
           <h4>Lenguajes y tecnologías usados</h4>
           <div className="flex gap-3 text-4xl">
             {project.technologies.map((technology) => (
@@ -121,8 +138,8 @@ export default function ProjectCard({index, project}: Props) {
               </Tooltip>
             ))}
           </div>
-          <Listbox as='div' className="relative">
-            <Listbox.Button className="rounded-lg flex justify-between items-center py-2 px-3 w-full active:scale-95 transition ease-in-out bg-gray-200 dark:bg-zinc-800">
+          {project.mainLibraries && (<Listbox as='div' className="relative">
+            <Listbox.Button className="rounded-lg flex justify-between items-center py-2 px-3 w-full transition ease-in-out bg-gray-200 hover:bg-indigo-200 dark:bg-slate-800">
               <h4 className="text-sm sm:text-base">Librerías y herramientas usadas</h4>
               <HiOutlineSelector size={25}/>
             </Listbox.Button>
@@ -149,7 +166,7 @@ export default function ProjectCard({index, project}: Props) {
                 </Listbox.Option>
               ))}
             </Listbox.Options>
-          </Listbox>
+          </Listbox>)}
           <h4>¿Qué aprendí?</h4>
           <p className="text-sm text-gray-700 dark:text-gray-400">
             {project.learned}
@@ -163,12 +180,14 @@ export default function ProjectCard({index, project}: Props) {
           >
             Repositorio
           </a>
-          <a href={project.live} target="_blank" rel="noopener noreferrer"
-            className="btn-primary"
-            aria-label="Ver en vivo"
-          >
-            Ver en vivo
-          </a>
+          {project.live && (
+            <a href={project.live} target="_blank" rel="noopener noreferrer"
+              className="btn-primary"
+              aria-label="Ver en vivo"
+            >
+              Ver en vivo
+            </a>)
+          }
         </div>
       </Modal>
     </>

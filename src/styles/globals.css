@@ -63,7 +63,7 @@ h4 {
 body {
   @apply font-roboto
   bg-gray-100
-  dark:bg-black;
+  dark:bg-slate-950;
 }
 
 .input-text {

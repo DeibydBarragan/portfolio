@@ -1,15 +1,16 @@
-import { AnimatePresence } from 'framer-motion'
+import { numberToStringArray } from '@/utils/utils'
 import Image from 'next/image'
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi'
-import { motion } from 'framer-motion';
 
 type Props = {
-  images: string[]
+  location: string
+  imagesNumber: number
   showButtons?: boolean
 }
 
-export default function Carousel({images, showButtons = true}: Props) {
+export default function Carousel({location, imagesNumber, showButtons = true}: Props) {
+  const images = numberToStringArray(imagesNumber)
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const onLeft = () => {
@@ -20,20 +21,20 @@ export default function Carousel({images, showButtons = true}: Props) {
     }
   }
 
-  const onRight = () => {
+  const onRight = useCallback(() => {
     if (currentSlide === images.length - 1) {
       setCurrentSlide(0)
     } else {
       setCurrentSlide(currentSlide + 1)
     }
-  }
+  }, [currentSlide, images.length])
 
   useEffect(() => {
     const interval = setInterval(() => {
       onRight()
     }, 5000)
     return () => clearInterval(interval)
-  }, [currentSlide])
+  }, [currentSlide, onRight])
 
   return (
     <div className="flex w-full justify-center items-center relative">
@@ -50,7 +51,7 @@ export default function Carousel({images, showButtons = true}: Props) {
         {images.map((image, index) => (
             <Image
               key={index}
-              src={`/images/${image}.webp`}
+              src={`/images/${location}/${image}.webp`}
               alt='Nombre de projecto'
               width={1280}
               height={720}

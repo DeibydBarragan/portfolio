@@ -1,6 +1,6 @@
 import { MdPlaylistAddCheckCircle } from "react-icons/md"
 import { Project } from "./projectComponent/interfaces"
-import { SiFirebase, SiHtml5, SiJavascript, SiReact, SiTailwindcss } from "react-icons/si"
+import { SiBootstrap, SiFirebase, SiHtml5, SiJavascript, SiLaravel, SiMysql, SiPhp, SiReact, SiTailwindcss } from "react-icons/si"
 
 export const ProjectsData: Project[] = [
   {
@@ -41,16 +41,46 @@ export const ProjectsData: Project[] = [
         icon: <SiHtml5 className='text-red-500'/>,
       },
     ],
-    images: [
-      'todo/todo1',
-      'todo/todo2',
-      'todo/todo3',
-      'todo/todo4',
-      'todo/todo5',
-      'todo/todo6',
-      'todo/todo7',
-      'todo/todo8',
-      'todo/todo9'
-    ],
+    imagesLocation: 'todo',
+    imagesNumber: 9,
   },
+  {
+    name: 'Sena Food-Site',
+    icon: <MdPlaylistAddCheckCircle size={43}/>,
+    shortDescription: 'Una aplicación de tipo e-commerce autoadministrable que permite gestionar productos, pedidos y usuarios de un restaurante, todo en una interfaz amigable y responsiva.',
+    longDescription: 'Una aplicación de tipo e-commerce autoadministrable que permite gestionar productos, pedidos y usuarios de un restaurante, todo en una interfaz amigable y responsiva. Esta aplicación fue realizada para el restaurante de una sede del Servicio Nacional de Aprendizaje (SENA) ubicada en Bogotá, Colombia. Tiene diferentes roles tales como invitado, consumidor, vendedor y administrador, entrando como invitado es posible visualizar los diferentes productos del restaurante. Como consumidor es posible agregar productos al carrito y hacer pedidos, además de enviar comentarios al soporte técnico, también está la posibilidad de modificar algunos datos del perfil. Ingresando como vendedor también se tiene acceso a visualizar los productos, pero también a modificarlos, es imposible hacer pedidos y se tiene la funcionalidad de gestionar los pedidos que hacen los usuarios y los productos. Como administrador se pueden administrar los productos, los usuarios y los comentarios del soporte técnico. Esta aplicación fue desarrollada con el framework Laravel en conjunto con PHP, y para el frontend se usó Bootstrap. Los datos eran almacenados en una base de datos de MySQL.',
+    learned: 'Este proyecto fue mi primera oportunidad para aprender a desarrollar aplicaciones full-stack haciendo uso de frameworks y herramientas de vanguardia. Aprendí a realizar REST APIs, autenticación y manejo de roles, también aprendí a realizar diseños responsivos y amigables con el usuario, además de hacer mi primer despliegue en la plataforma de Hostinger, adicionalmente aprendí a diseñar bases de datos relacionales y a gestionarlas usando MySQL.',
+    repository: 'https://github.com/DeibydBarragan/sena-food-site',
+    technologies: [
+      {
+        name: 'Laravel',
+        version: '9',
+        icon: <SiLaravel className='text-red-500'/>,
+      },
+      {
+        name: 'Bootstrap',
+        version: '4',
+        icon: <SiBootstrap className='text-purple-500'/>,
+      },
+      {
+        name: 'MySQL',
+        version: '8',
+        icon: <SiMysql className='text-blue-500'/>,
+      }
+    ],
+    languages: [
+      {
+        name: 'PHP',
+        version: '8.1.0',
+        icon: <SiPhp className='text-blue-600'/>,
+      },
+      {
+        name: 'HTML',
+        version: '5',
+        icon: <SiHtml5 className='text-red-500'/>,
+      },
+    ],
+    imagesLocation: 'foodsite',
+    imagesNumber: 28,
+  }
 ]
