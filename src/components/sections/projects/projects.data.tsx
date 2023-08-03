@@ -1,10 +1,10 @@
 import { MdPlaylistAddCheckCircle } from "react-icons/md"
-import { Project } from "./projectComponent/interfaces"
+import {DetailedProject, Project} from "./projectComponent/interfaces"
 import { FaJava, FaLaptopMedical } from "react-icons/fa"
 import { MdFastfood } from "react-icons/md"
 import { SiBootstrap, SiTypescript, SiSpringboot, SiPostgresql, SiNextdotjs, SiFirebase, SiHtml5, SiJavascript, SiLaravel, SiMysql, SiPhp, SiReact, SiTailwindcss } from "react-icons/si"
 
-export const ProjectsData: Project[] = [
+export const ProjectsData: DetailedProject[] = [
   {
     name: 'To-Do List',
     icon: <MdPlaylistAddCheckCircle size={43}/>,
@@ -52,6 +52,7 @@ export const ProjectsData: Project[] = [
     shortDescription: 'Es una aplicación permite acceder a una base de datos PostgreSQL para gestionar citas médicas de manera eficiente. Con funcionalidades para ver, crear, actualizar y eliminar citas, pacientes y médicos, así como filtrar citas por cédula del paciente, cédula del médico y especialidad.',
     longDescription: 'Es una aplicación te permite acceder a una base de datos PostgreSQL para gestionar citas médicas de manera eficiente. Con funcionalidades para ver, crear, actualizar y eliminar citas, pacientes y médicos, así como filtrar citas por cédula del paciente, cédula del médico y especialidad. Está desarrollada principalmente con Spring Boot del lado del servidor y NextJS del lado del cliente.',
     learned: 'Este proyecto me permitió afianzar mis conocimientos y habilidades co NextJS y Typescript, adicionalmente aprendí a usar la librería de componentes NextUI y a consumir un microservicio del lado del frontend. Del lado del servidor aprendí los fundamentos de Spring Boot y Java para desarrollar APIs, también fue una oportunidad de aprender a usar herramientas como Postman para testear los endpoints, Docker para construir la imagen del proyecto y desplegarlo en un contenedor. Además de todo esto, afiance mis conocimientos en diseño e implementación de bases de datos relacionales con PostgreSQL.',
+    mainLibraries: ['NextUI', 'React-Hook-Form', 'Yup', 'ESlint', 'Lucide React', 'React Toastify', 'MomentJS'],
     repository: 'https://github.com/DeibydBarragan/eps-spring-rest-api',
     technologies: [
       {
@@ -125,3 +126,20 @@ export const ProjectsData: Project[] = [
     imagesNumber: 28,
   }
 ]
+
+export const OtherProjects: Project[] = [
+    {
+      name: 'Tapredit',
+      repository: 'https://github.com/DeibydBarragan/tapredit',
+      live: 'https://tapredit.vercel.app/',
+      imagesLocation: 'tapredit',
+      imagesNumber: 13,
+    },
+    {
+      name: 'Cursos libres UN',
+      repository: 'https://github.com/DeibydBarragan/cursos-libres',
+      live: 'https://cursos-libres.vercel.app/',
+      imagesLocation: 'cursoslibres',
+      imagesNumber: 12,
+    }
+  ]

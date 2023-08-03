@@ -1,8 +1,9 @@
 import Section from "../Section"
 import ProjectCard from "./projectComponent/ProjectCard"
-import { ProjectsData } from "./projects.data"
+import {OtherProjects, ProjectsData} from "./projects.data"
 import {Disclosure} from "@headlessui/react";
 import {HiChevronDown} from "react-icons/hi";
+import OtherProjectCard from "@/components/sections/projects/projectComponent/OtherProjectCard";
 
 type Props = {}
 
@@ -26,8 +27,10 @@ export default function Projects({}: Props) {
                     className={open ? 'rotate-180 transform' : ''}
                 />
               </Disclosure.Button>
-              <Disclosure.Panel className="text-sm text-gray-700 dark:text-gray-400">
-                Otros proyectos
+              <Disclosure.Panel className="flex gap-10 flex-col md:flex-row">
+                {OtherProjects.map((project, index) => (
+                    <OtherProjectCard key={index} project={project}/>
+                ))}
               </Disclosure.Panel>
             </>
         )}

@@ -7,15 +7,18 @@ export interface Technologies {
 }
 export interface Project {
   name: string;
-  icon: ReactNode;
-  repository: string;
+  repository?: string;
   live?: string;
+  imagesLocation: string;
+  imagesNumber: number;
+}
+
+export interface DetailedProject extends Project {
+  icon: ReactNode;
   shortDescription: string;
   longDescription: string;
   technologies: Technologies[];
   languages: Technologies[];
   learned: string;
   mainLibraries?: string[];
-  imagesLocation: string;
-  imagesNumber: number;
 }

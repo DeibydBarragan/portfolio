@@ -6,14 +6,14 @@ import { useState } from 'react'
 import Modal from '@/components/pure/modal/Modal'
 import { Dialog, Disclosure, Listbox } from '@headlessui/react'
 import Carousel from '@/components/pure/carousel/Carousel'
-import { Project } from './interfaces'
+import { DetailedProject } from './interfaces'
 import { motion } from 'framer-motion';
 import Tooltip from '@/components/pure/tooltip/Tooltip'
 import { SiGithub } from 'react-icons/si'
 import { flyLeft, flyRight } from '@/animations/anim'
 
 type Props = {
-  project: Project
+  project: DetailedProject
   index: number
 }
 
