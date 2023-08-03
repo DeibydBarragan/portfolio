@@ -61,7 +61,9 @@ export default function Education({}: Props) {
           <br/>- En curso
         </p>
         <p>
-          Este curso ha sido una oportunidad para aprender más acerca de desarollo backend desarrollando APIS con tecnologías como Spring Boot (Java) y Express (NodeJs)
+          Este curso ha sido una oportunidad para aprender más acerca de desarollo backend diseñando
+          arquitectura y desarrollando APIs con tecnologías como Spring Boot (Java) y Express (NodeJs)
+          además de diseñar e implementar bases de datos tanto relacionales como no relacionales.
         </p>
       </EducationCard>
       <EducationCard delay={0.6}>
@@ -78,12 +80,15 @@ export default function Education({}: Props) {
         delay={0.9}
       >
         <span className='font-semibold'>
-          Desarrollo de proyectos de software personales - 5 meses
+          Desarrollo de proyectos de software  y académicos - 6 meses
         </span>
         <p>
-          En mi tiempo libre, he estado enfocado en desarrollar proyectos personales para 
-          aprender diferentes tecnologías. He trabajado con herramientas como NextJS, React
-          , Tailwind y Firebase. Me apasiona seguir aprendiendo y mejorando mis habilidades 
+          En mi tiempo libre, he estado enfocado en desarrollar proyectos personales de diferentes tipos para
+          aprender tecnologías mejorando mis habilidades y prácticas de desarrollo. He trabajado con herramientas como NextJS, React
+          , Tailwind y diferentes librerías de componentes del lado del frontend. Adicionalmente he trabajado
+          desarrollando y diseñando APIs con tecnologías como Spring Boot, Express y Laravel, e implementando
+          bases de datos relacionales y no relacionales con MySQL, MongoDB y Firebase.
+          Me apasiona seguir aprendiendo y mejorando mis habilidades
           técnicas, y estos proyectos me han permitido hacer precisamente eso, mientras 
           desarrollo soluciones creativas y prácticas.
         </p>

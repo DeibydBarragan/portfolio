@@ -41,7 +41,7 @@
 }
 
 .btn-primary-outline {
-  @apply btn border-2 border-indigo-700 bg-white hover:bg-indigo-700 text-indigo-700 hover:text-white;
+  @apply btn border-2 border-indigo-700 bg-transparent hover:bg-indigo-700 text-indigo-700 hover:text-white;
 }
 
 h1 {

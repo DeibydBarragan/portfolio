@@ -17,7 +17,17 @@ export default function About() {
       >
         <h2>Sobre mí</h2>
         <p>
-          Soy un desarrollador web font-end con experiencia en NextJS, React, JavaScript, TypeScript, Tailwind, HTML, CSS, librerías de componentes, Laravel y manejo de bases de datos relacionales con SQL así como no relacionales como Firebase. Soy capaz de desarrollar y mantener aplicaciones web complejas usando una combinación de tecnologías de punta y buenas prácticas de desarrollo buscando siempre la mejor experiencia de usuario. Adicionalmente, me apasiona aprender y mejorar constantemente, buscando siempre actualizar mis habilidades y ampliar mis conocimientos en el campo del desarrollo web. Mis fuertes habilidades de comunicación y habilidades para resolver problemas me convierten en un miembro valioso del equipo, capaz de comunicar conceptos técnicos de manera efectiva y encontrar soluciones creativas a los desafíos.
+          Soy un desarrollador web fullstack con experiencia en desarrollo de aplicaciones frontend
+          con NextJS, React, JavaScript, TypeScript, Tailwind, HTML y diferentes librerías de
+          componentes. También tengo experiencia desarrollando APIs con Spring Boot, Express y Laravel,
+          ademas de manejo de bases de datos relacionales con SQL así como no relacionales como Firebase
+          o MongoDB. Soy capaz de desarrollar y mantener apps complejas usando una combinación de
+          tecnologías de punta y buenas prácticas de desarrollo buscando siempre la mejor experiencia
+          de usuario. Adicionalmente, me apasiona aprender y mejorar constantemente, buscando siempre
+          actualizar mis habilidades y ampliar mis conocimientos en el campo del desarrollo de software.
+          Mis fuertes habilidades de comunicación y habilidades para resolver problemas me convierten
+          en un miembro valioso del equipo, soy capaz de comunicar conceptos técnicos de manera efectiva
+          y encontrar soluciones creativas a los desafíos.
         </p>
       </motion.div>
       <div className="relative grid grid-cols-1  sm:grid-cols-2 gap-3">

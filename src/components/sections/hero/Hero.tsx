@@ -31,13 +31,13 @@ export default function Hero() {
           transition={{delay: 0.8}}
           {...flyUp}
         >
-          Desarrollador front-end
+          Desarrollador fullstack
         </motion.h1>
         <motion.p
           transition={{delay: 1.1}}
           {...flyUp}
         >
-        Soy un desarrollador web front-end con experiencia en NextJS, React, JavaScript, TypeScript, Tailwind, etc. Capaz de desarrollar y mantener aplicaciones web complejas y responsivas buscando siempre la mejor experiencia de usuario, me apasiona lo que hago y siempre busco aprender y mejorar.
+        Soy un desarrollador web fullstack con experiencia en NextJS, React, TypeScript, Tailwind, Express, Spring Boot, etc. Capaz de desarrollar y mantener aplicaciones web complejas y responsivas buscando siempre la mejor experiencia de usuario, me apasiona lo que hago y siempre busco aprender y mejorar.
         </motion.p>
         <motion.div className="flex gap-3"
           transition={{delay: 1.6}}

@@ -10,7 +10,7 @@ type Props = {
 }
 export default function OtherProjectCard({ project }: Props) {
     return (
-        <motion.div className='group relative' {...fadeIn}>
+        <motion.div className='group relative rounded-2xl border shadow-sm dark:border-none' {...fadeIn}>
             <a
                 href={project.live || project.repository|| '/'}
                 target="_blank" rel="noopener noreferrer"

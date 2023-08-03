@@ -49,18 +49,18 @@ export default function ProjectCard({index, project}: Props) {
                 <span className="hidden sm:block">
                   Repositorio
                 </span>
-                <SiGithub size={25} className="sm:hidden"/>
+                <SiGithub size={25}/>
               </a>
               {project.live && (
                 <a
                   href={project.live} target="_blank" rel="noopener noreferrer"
                   className="btn-primary"
-                  aria-label='Ver en vivo'  
+                  aria-label='Ver en vivo'
                 >
                     <span className="hidden sm:block">
                       Ver en vivo
                     </span>
-                  <VscLiveShare size={25} className="sm:hidden"/>
+                  <VscLiveShare size={25}/>
                 </a>
               )}
             </div>
@@ -139,7 +139,7 @@ export default function ProjectCard({index, project}: Props) {
             ))}
           </div>
           {project.mainLibraries && (<Listbox as='div' className="relative">
-            <Listbox.Button className="rounded-lg flex justify-between items-center py-2 px-3 w-full transition ease-in-out bg-gray-200 hover:bg-indigo-200 dark:bg-slate-800">
+            <Listbox.Button className="rounded-lg flex justify-between items-center py-2 px-3 w-full transition ease-in-out bg-white hover:bg-gray-100 dark:bg-slate-800 shadow-sm border dark:border-none">
               <h4 className="text-sm sm:text-base">Librerías y herramientas usadas</h4>
               <HiOutlineSelector size={25}/>
             </Listbox.Button>
@@ -175,17 +175,19 @@ export default function ProjectCard({index, project}: Props) {
         </div>
         <div className="flex w-full justify-end gap-4 mt-4">
           <a href={project.repository} target="_blank" rel="noopener noreferrer"
-            className="btn-primary"
+            className="btn-primary-outline"
             aria-label="Repositorio"
           >
             Repositorio
+            <SiGithub size={25}/>
           </a>
           {project.live && (
             <a href={project.live} target="_blank" rel="noopener noreferrer"
-              className="btn-primary"
+              className="btn-primary-outline"
               aria-label="Ver en vivo"
             >
               Ver en vivo
+              <VscLiveShare size={25}/>
             </a>)
           }
         </div>
