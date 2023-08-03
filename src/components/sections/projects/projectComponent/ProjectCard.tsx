@@ -22,7 +22,7 @@ export default function ProjectCard({index, project}: Props) {
 
   return (
     <>
-      <motion.div className={`flex flex-col sm:flex-row gap-6 ${index % 2 !== 0 && 'sm:flex-row-reverse'}`}
+      <motion.div className={`flex flex-col sm:flex-row sm:items-center gap-6 ${index % 2 !== 0 && 'sm:flex-row-reverse'}`}
         transition={{
           duration: 0.3,
           delay: 0.3 * index,
@@ -38,10 +38,8 @@ export default function ProjectCard({index, project}: Props) {
           />
           <div className='absolute bottom-0 p-2 w-full z-10 flex justify-between items-center bg-black/20 backdrop-blur-sm rounded-b-2xl text-white'>
             <div className="flex gap-3 items-center">
-              <MdPlaylistAddCheckCircle
-                size={43}
-              />
-                <h4>{project.name}</h4>
+              {project.icon}
+              <h4>{project.name}</h4>
             </div>
             <div className="flex flex-end gap-3">
               <a href={project.repository} target="_blank" rel="noopener noreferrer"
@@ -108,7 +106,7 @@ export default function ProjectCard({index, project}: Props) {
           <Disclosure>
             {({ open }) => (
               <>
-                <Disclosure.Button className="rounded-lg flex justify-between items-center py-2 px-3 w-full transition ease-in-out bg-gray-200 hover:bg-indigo-200 dark:bg-slate-800">
+                <Disclosure.Button className="rounded-lg flex justify-between items-center py-2 px-3 w-full transition ease-in-out bg-white hover:bg-gray-100 dark:bg-slate-800 shadow-sm border dark:border-none">
                   <h4 className="text-sm sm:text-base">Descripción</h4>
                   <HiChevronDown
                     size={25}

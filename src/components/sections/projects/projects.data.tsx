@@ -1,6 +1,8 @@
 import { MdPlaylistAddCheckCircle } from "react-icons/md"
 import { Project } from "./projectComponent/interfaces"
-import { SiBootstrap, SiFirebase, SiHtml5, SiJavascript, SiLaravel, SiMysql, SiPhp, SiReact, SiTailwindcss } from "react-icons/si"
+import { FaJava, FaLaptopMedical } from "react-icons/fa"
+import { MdFastfood } from "react-icons/md"
+import { SiBootstrap, SiTypescript, SiSpringboot, SiPostgresql, SiNextdotjs, SiFirebase, SiHtml5, SiJavascript, SiLaravel, SiMysql, SiPhp, SiReact, SiTailwindcss } from "react-icons/si"
 
 export const ProjectsData: Project[] = [
   {
@@ -45,8 +47,47 @@ export const ProjectsData: Project[] = [
     imagesNumber: 9,
   },
   {
+    name: 'EPS Rest API',
+    icon: <FaLaptopMedical size={40}/>,
+    shortDescription: 'Es una aplicación permite acceder a una base de datos PostgreSQL para gestionar citas médicas de manera eficiente. Con funcionalidades para ver, crear, actualizar y eliminar citas, pacientes y médicos, así como filtrar citas por cédula del paciente, cédula del médico y especialidad.',
+    longDescription: 'Es una aplicación te permite acceder a una base de datos PostgreSQL para gestionar citas médicas de manera eficiente. Con funcionalidades para ver, crear, actualizar y eliminar citas, pacientes y médicos, así como filtrar citas por cédula del paciente, cédula del médico y especialidad. Está desarrollada principalmente con Spring Boot del lado del servidor y NextJS del lado del cliente.',
+    learned: 'Este proyecto me permitió afianzar mis conocimientos y habilidades co NextJS y Typescript, adicionalmente aprendí a usar la librería de componentes NextUI y a consumir un microservicio del lado del frontend. Del lado del servidor aprendí los fundamentos de Spring Boot y Java para desarrollar APIs, también fue una oportunidad de aprender a usar herramientas como Postman para testear los endpoints, Docker para construir la imagen del proyecto y desplegarlo en un contenedor. Además de todo esto, afiance mis conocimientos en diseño e implementación de bases de datos relacionales con PostgreSQL.',
+    repository: 'https://github.com/DeibydBarragan/eps-spring-rest-api',
+    technologies: [
+      {
+        name: 'NextJS',
+        version: '13',
+        icon: <SiNextdotjs className='text-black dark:text-white'/>,
+      },
+      {
+        name: 'Spring Boot',
+        version: '4',
+        icon: <SiSpringboot className='text-green-500'/>,
+      },
+      {
+        name: 'PostgreSQL',
+        version: '15',
+        icon: <SiPostgresql className='text-blue-500'/>,
+      }
+    ],
+    languages: [
+      {
+        name: 'TypeScript',
+        version: 'ES6',
+        icon: <SiTypescript className='text-blue-600'/>,
+      },
+      {
+        name: 'Java',
+        version: '17',
+        icon: <FaJava className='text-red-500'/>,
+      },
+    ],
+    imagesLocation: 'eps',
+    imagesNumber: 15,
+  },
+  {
     name: 'Sena Food-Site',
-    icon: <MdPlaylistAddCheckCircle size={43}/>,
+    icon: <MdFastfood size={40}/>,
     shortDescription: 'Una aplicación de tipo e-commerce autoadministrable que permite gestionar productos, pedidos y usuarios de un restaurante, todo en una interfaz amigable y responsiva.',
     longDescription: 'Una aplicación de tipo e-commerce autoadministrable que permite gestionar productos, pedidos y usuarios de un restaurante, todo en una interfaz amigable y responsiva. Esta aplicación fue realizada para el restaurante de una sede del Servicio Nacional de Aprendizaje (SENA) ubicada en Bogotá, Colombia. Tiene diferentes roles tales como invitado, consumidor, vendedor y administrador, entrando como invitado es posible visualizar los diferentes productos del restaurante. Como consumidor es posible agregar productos al carrito y hacer pedidos, además de enviar comentarios al soporte técnico, también está la posibilidad de modificar algunos datos del perfil. Ingresando como vendedor también se tiene acceso a visualizar los productos, pero también a modificarlos, es imposible hacer pedidos y se tiene la funcionalidad de gestionar los pedidos que hacen los usuarios y los productos. Como administrador se pueden administrar los productos, los usuarios y los comentarios del soporte técnico. Esta aplicación fue desarrollada con el framework Laravel en conjunto con PHP, y para el frontend se usó Bootstrap. Los datos eran almacenados en una base de datos de MySQL.',
     learned: 'Este proyecto fue mi primera oportunidad para aprender a desarrollar aplicaciones full-stack haciendo uso de frameworks y herramientas de vanguardia. Aprendí a realizar REST APIs, autenticación y manejo de roles, también aprendí a realizar diseños responsivos y amigables con el usuario, además de hacer mi primer despliegue en la plataforma de Hostinger, adicionalmente aprendí a diseñar bases de datos relacionales y a gestionarlas usando MySQL.',
