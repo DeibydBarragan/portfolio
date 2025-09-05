@@ -1,10 +1,50 @@
 import { MdPlaylistAddCheckCircle } from "react-icons/md"
 import {DetailedProject, Project} from "./projectComponent/interfaces"
-import { FaJava, FaLaptopMedical } from "react-icons/fa"
+import { FaJava, FaLaptopMedical, FaRobot } from "react-icons/fa"
 import { MdFastfood } from "react-icons/md"
-import { SiBootstrap, SiTypescript, SiSpringboot, SiPostgresql, SiNextdotjs, SiFirebase, SiHtml5, SiJavascript, SiLaravel, SiMysql, SiPhp, SiReact, SiTailwindcss } from "react-icons/si"
+import { SiBootstrap, SiTypescript, SiSpringboot, SiPostgresql, SiNextdotjs, SiFirebase, SiHtml5, SiJavascript, SiLaravel, SiMysql, SiPhp, SiReact, SiTailwindcss, SiNodedotjs, SiSqlite, SiElectron } from "react-icons/si"
 
 export const ProjectsData: DetailedProject[] = [
+  {
+    name: 'Pretty Exam',
+    icon: <FaRobot size={40}/>,
+    shortDescription: 'Una herramienta de estudio autónomo que permite crear, gestionar y realizar exámenes personalizados utilizando un banco de preguntas propio, complementado con la capacidad de generar preguntas automáticamente mediante IA.',
+    longDescription: 'Pretty Exam es una herramienta de estudio autónomo diseñada específicamente para personas que buscan una mejor manera de preparación académica. La aplicación permite crear, gestionar y realizar exámenes personalizados utilizando un banco de preguntas propio que crea el usuario, complementado también con la capacidad de generar preguntas automáticamente mediante IA a partir de un PDF. El objetivo principal es proporcionar a las personas una herramienta para el autoaprendizaje y la autoevaluación, donde cada persona puede crear sus propios bancos de preguntas organizados por categorías, así como también generar contenido de evaluación de manera automática usando IA, y realizar exámenes personalizados que les permitan medir sus habilidades de forma efectiva autónomamente.',
+    learned: 'Este proyecto fue desarrollado como parte de la materia de Ingeniería de Software 1 en la Universidad Nacional de Colombia. En este proyecto aprendí sobre metodologías ágiles de desarrollo, trabajo en equipo usando Git y GitHub, arquitectura de software, y el ciclo completo de desarrollo de una aplicación desde la concepción hasta la implementación. También profundicé en el desarrollo con Node.js y JavaScript, manejo de bases de datos SQLite, y la integración de servicios de IA para automatizar la generación de contenido educativo.',
+    mainLibraries: ['DaisyUI', 'SQLite3', 'React', 'Gemini API', 'Vite', 'Jest', 'eslint'],
+    repository: 'https://github.com/Bellic12/2025-1_IngeSoft1',
+    technologies: [
+      {
+        name: 'Node.js',
+        version: '18',
+        icon: <SiNodedotjs className='text-green-500'/>,
+      },
+      {
+        name: 'Electron',
+        version: '32',
+        icon: <SiElectron className='text-blue-400'/>,
+      },
+      {
+        name: 'SQLite',
+        version: '3',
+        icon: <SiSqlite className='text-blue-500'/>,
+      }
+    ],
+    languages: [
+      {
+        name: 'JavaScript',
+        version: 'ES6',
+        icon: <SiJavascript className='text-yellow-500'/>,
+      },
+      {
+        name: 'HTML',
+        version: '5',
+        icon: <SiHtml5 className='text-red-500'/>,
+      },
+    ],
+    imagesLocation: 'prettyExam',
+    imagesNumber: 9,
+  },
   {
     name: 'To-Do List',
     icon: <MdPlaylistAddCheckCircle size={43}/>,
@@ -128,6 +168,12 @@ export const ProjectsData: DetailedProject[] = [
 ]
 
 export const OtherProjects: Project[] = [
+    {
+      name: 'uBudget',
+      live: 'https://ubudget-eta.vercel.app/',
+      imagesLocation: 'ubudget',
+      imagesNumber: 8,
+    },
     {
       name: 'Tapredit',
       repository: 'https://github.com/DeibydBarragan/tapredit',

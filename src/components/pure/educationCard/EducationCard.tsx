@@ -13,7 +13,7 @@ export default function EducationCard({children, delay}: Props) {
   return (
     <div className='relative flex flex-col gap-3 divide-y rounded-lg bg-white/70 dark:bg-zinc-950/70 p-6'>
       <motion.div
-        className='flex items-center justify-between gap-3'
+        className='flex items-start justify-between gap-3'
         transition={{delay: delay ? 0.3 * delay : 0.3}}
         {...fadeIn}
       >
