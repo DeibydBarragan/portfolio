@@ -14,6 +14,10 @@ export const routes: Route[] = [
     name: 'Proyectos',
   },
   {
+    path: 'experience',
+    name: 'Experiencia',
+  },
+  {
     path: 'education',
     name: 'Educacion',
   }

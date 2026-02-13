@@ -27,8 +27,8 @@ export default function ContactForm({}: Props) {
     try {
       setLoading(true)
       await emailjs.sendForm(
-        'service_06ucv1i',
-        'template_weiezvo',
+        'service_i8l93pa',
+        'template_xph7gfp',
         form.current,
         'ujWGQJntsXHdicI8X'
       )

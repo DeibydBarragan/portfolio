@@ -1,6 +1,7 @@
 import Hero from '../components/sections/hero/Hero';
 import About from "@/components/sections/about/About";
 import Education from '../components/sections/education/Education';
+import Experience from '../components/sections/experience/Experience';
 import Layout from "@/components/layout/Layout";
 import Skills from '@/components/sections/skills/Skills';
 import Projects from '@/components/sections/projects/Projects';
@@ -19,6 +20,7 @@ export default function Home(): JSX.Element {
         <About/>
         <Skills/>
         <Projects/>
+        <Experience/>
         <Education/>
         <Contact/>
         <UpButton/>
