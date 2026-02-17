@@ -68,8 +68,7 @@ export default function Education({}: Props) {
         </span>
         <p>
           Servicio Nacional de Aprendizaje (SENA)
-          <br/>- En proceso de certificación
-          <br/>- 2022- 2023 (9 meses)
+          <br/>2022 - 2023 (9 meses)
         </p>
         <p>
           En mi técnico en programación de software aprendí los fundamentos del desarrollo web frontend y backend con HTML, CSS, JS, PHP, MySQL y desarollo de proyectos de software realistas.

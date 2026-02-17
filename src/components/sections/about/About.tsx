@@ -20,9 +20,9 @@ export default function About() {
           Soy un desarrollador web fullstack con experiencia en desarrollo de aplicaciones frontend
           con NextJS, React, JavaScript, TypeScript, Tailwind, HTML y diferentes librerías de
           componentes. También tengo experiencia desarrollando APIs con Spring Boot, Express y Laravel,
-          ademas de manejo de bases de datos relacionales con SQL así como no relacionales como Firebase
-          o MongoDB. Soy capaz de desarrollar y mantener apps complejas usando una combinación de
-          tecnologías de punta y buenas prácticas de desarrollo buscando siempre la mejor experiencia
+          manejo de bases de datos relacionales con SQL así como no relacionales como Firebase
+          o MongoDB, y desarrollo de soluciones con inteligencia artificial. Soy capaz de desarrollar y mantener apps complejas usando una combinación de
+          tecnologías de punta, IA y buenas prácticas de desarrollo buscando siempre la mejor experiencia
           de usuario. Adicionalmente, me apasiona aprender y mejorar constantemente, buscando siempre
           actualizar mis habilidades y ampliar mis conocimientos en el campo del desarrollo de software.
           Mis fuertes habilidades de comunicación y habilidades para resolver problemas me convierten

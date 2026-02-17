@@ -112,17 +112,17 @@ export default function Experience({}: Props) {
         delay={0.9}
       >
         <span className='font-semibold'>
-          Desarrollo de proyectos de software y académicos - 6 meses
+          Desarrollo de proyectos académicos y personales - 6 meses
         </span>
         <p>
-          En mi tiempo libre, he estado enfocado en desarrollar proyectos personales de diferentes tipos para
-          aprender tecnologías mejorando mis habilidades y prácticas de desarrollo. He trabajado con herramientas como NextJS, React
-          , Tailwind y diferentes librerías de componentes del lado del frontend. Adicionalmente he trabajado
-          desarrollando y diseñando APIs con tecnologías como Spring Boot, Express y Laravel, e implementando
-          bases de datos relacionales y no relacionales con MySQL, MongoDB y Firebase.
-          Me apasiona seguir aprendiendo y mejorando mis habilidades
-          técnicas, y estos proyectos me han permitido hacer precisamente eso, mientras 
-          desarrollo soluciones creativas y prácticas.
+          Durante mi carrera universitaria he desarrollado diversos proyectos para las asignaturas, trabajando con
+          tecnologías como Node.js, Electron, SQLite, React y JavaScript. Estos proyectos académicos me han permitido
+          aprender metodologías ágiles, arquitectura de software y el ciclo completo de desarrollo de aplicaciones.
+          Paralelamente, en mi tiempo libre, he creado proyectos personales para profundizar en diferentes tecnologías,
+          utilizando NextJS, React, Tailwind y diversas librerías del lado del frontend. También he desarrollado APIs
+          con Spring Boot, Express y Laravel, implementando bases de datos relacionales y no relacionales con MySQL, MongoDB y Firebase.
+          Me apasiona seguir aprendiendo y mejorando mis habilidades técnicas, y estos proyectos me han permitido precisamente eso,
+          mientras desarrollo soluciones creativas y prácticas.
         </p>
       </EducationCard>
     </Section>

@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { HiDocumentDownload, HiMail } from "react-icons/hi"
+import { SiLinkedin, SiGithub } from "react-icons/si"
 import { Link } from "react-scroll"
 import Section from "../Section"
 import { fadeIn, flyUp } from "@/animations/anim"
@@ -37,20 +38,20 @@ export default function Hero() {
           transition={{delay: 1.1}}
           {...flyUp}
         >
-        Soy un desarrollador web fullstack con experiencia en NextJS, React, TypeScript, Tailwind, Express, Spring Boot, etc. Capaz de desarrollar y mantener aplicaciones web complejas y responsivas buscando siempre la mejor experiencia de usuario, me apasiona lo que hago y siempre busco aprender y mejorar.
+        Soy un desarrollador web fullstack con experiencia en NextJS, React, TypeScript, Tailwind, Express, Spring Boot e inteligencia artificial. Capaz de desarrollar y mantener aplicaciones web complejas y responsivas que integran soluciones de IA, buscando siempre la mejor experiencia de usuario, me apasiona lo que hago y siempre busco aprender y mejorar.
         </motion.p>
-        <motion.div className="flex gap-3"
+        <motion.div className="flex gap-3 flex-wrap"
           transition={{delay: 1.6}}
           {...fadeIn}
         >
-          <a
+          {/* <a
             href="/files/CV.pdf" 
             download="CV.pdf"
             className="btn-gradient"  
           >
             Descargar CV
             <HiDocumentDownload className="text-xl"/>
-          </a>
+          </a> */}
           <Link
             className="btn-gradient"
             to="contact"
@@ -60,6 +61,26 @@ export default function Hero() {
             Contáctame
             <HiMail className="text-xl"/>
           </Link>
+          <a
+            href="https://www.linkedin.com/in/deibyd-barragan-68b59018b/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-gradient"
+            aria-label="LinkedIn"
+          >
+            LinkedIn
+            <SiLinkedin className="text-xl"/>
+          </a>
+          <a
+            href="https://github.com/DeibydBarragan"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-gradient"
+            aria-label="GitHub"
+          >
+            GitHub
+            <SiGithub className="text-xl"/>
+          </a>
         </motion.div>
       </div>
     </Section>
