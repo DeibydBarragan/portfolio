@@ -1,7 +1,6 @@
 import Image from "next/image"
-import { HiDocumentDownload, HiMail } from "react-icons/hi"
+import { HiDocumentDownload } from "react-icons/hi"
 import { SiLinkedin, SiGithub } from "react-icons/si"
-import { Link } from "react-scroll"
 import Section from "../Section"
 import { fadeIn, flyUp } from "@/animations/anim"
 import { motion } from 'framer-motion';
@@ -9,6 +8,7 @@ import { useLanguage } from '@/context/LanguageContext';
 
 export default function Hero() {
   const { language } = useLanguage()
+  const cvFile = language === 'es' ? '/files/deibyd_barragan_cv_es.pdf' : '/files/deibyd_barragan_cv_en.pdf'
 
   return (
     <Section
@@ -49,23 +49,15 @@ export default function Hero() {
           transition={{delay: 1.6}}
           {...fadeIn}
         >
-          {/* <a
-            href="/files/CV.pdf" 
-            download="CV.pdf"
-            className="btn-gradient"  
-          >
-            Descargar CV
-            <HiDocumentDownload className="text-xl"/>
-          </a> */}
-          <Link
+          <a
+            href={cvFile}
+            download={language === 'es' ? 'deibyd_barragan_cv_es.pdf' : 'deibyd_barragan_cv_en.pdf'}
             className="btn-gradient"
-            to="contact"
-            smooth={true}
-            duration={500}
+            aria-label={language === 'es' ? 'Descargar CV' : 'Download CV'}
           >
-            {language === 'es' ? 'Contactame' : 'Contact me'}
-            <HiMail className="text-xl"/>
-          </Link>
+            {language === 'es' ? 'Descargar CV' : 'Download CV'}
+            <HiDocumentDownload className="text-xl"/>
+          </a>
           <a
             href="https://www.linkedin.com/in/deibyd-barragan-68b59018b/"
             target="_blank"
