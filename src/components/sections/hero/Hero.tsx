@@ -5,8 +5,11 @@ import { Link } from "react-scroll"
 import Section from "../Section"
 import { fadeIn, flyUp } from "@/animations/anim"
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Hero() {
+  const { language } = useLanguage()
+
   return (
     <Section
       className="md:flex-row items-center gap-6 md:w-9/12 lg:w-7/12 2xl:w-6/12"
@@ -32,13 +35,15 @@ export default function Hero() {
           transition={{delay: 0.8}}
           {...flyUp}
         >
-          Desarrollador fullstack
+          {language === 'es' ? 'Desarrollador fullstack' : 'Full-stack Developer'}
         </motion.h1>
         <motion.p
           transition={{delay: 1.1}}
           {...flyUp}
         >
-        Soy un desarrollador web fullstack con experiencia en NextJS, React, TypeScript, Tailwind, Express, Spring Boot e inteligencia artificial. Capaz de desarrollar y mantener aplicaciones web complejas y responsivas que integran soluciones de IA, buscando siempre la mejor experiencia de usuario, me apasiona lo que hago y siempre busco aprender y mejorar.
+        {language === 'es'
+          ? 'Soy un desarrollador web fullstack con experiencia en NextJS, React, TypeScript, Tailwind, Express, Spring Boot e inteligencia artificial. Capaz de desarrollar y mantener aplicaciones web complejas y responsivas que integran soluciones de IA, buscando siempre la mejor experiencia de usuario, me apasiona lo que hago y siempre busco aprender y mejorar.'
+          : 'I am a full-stack web developer with experience in NextJS, React, TypeScript, Tailwind, Express, Spring Boot, and artificial intelligence. I can build and maintain complex, responsive web applications that integrate AI solutions, always focused on delivering the best user experience. I love what I do and I am always looking to learn and improve.'}
         </motion.p>
         <motion.div className="flex gap-3 flex-wrap"
           transition={{delay: 1.6}}
@@ -58,7 +63,7 @@ export default function Hero() {
             smooth={true}
             duration={500}
           >
-            Contáctame
+            {language === 'es' ? 'Contactame' : 'Contact me'}
             <HiMail className="text-xl"/>
           </Link>
           <a

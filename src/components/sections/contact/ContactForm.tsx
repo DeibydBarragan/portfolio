@@ -1,18 +1,21 @@
-import { useRef, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import { HiMail } from 'react-icons/hi'
 import { motion } from 'framer-motion'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { contactSchema } from './contactSchema'
+import { getContactSchema } from './contactSchema'
 import Popover from '@/components/pure/popover/Popover'
 import emailjs from '@emailjs/browser'
 import { BiLoaderAlt } from 'react-icons/bi'
 import Toast from '@/components/pure/toast/Toast'
 import { fadeIn } from '@/animations/anim'
+import { useLanguage } from '@/context/LanguageContext'
 
 type Props = {}
 
 export default function ContactForm({}: Props) {
+  const { language } = useLanguage()
+  const contactSchema = useMemo(() => getContactSchema(language), [language])
 
   const form = useRef<any>('')
 
@@ -33,14 +36,14 @@ export default function ContactForm({}: Props) {
         'ujWGQJntsXHdicI8X'
       )
       setMessage({
-        title: 'Mensaje enviado',
-        message: 'Tu mensaje ha sido enviado con éxito, pronto me comunicaré contigo',
+        title: language === 'es' ? 'Mensaje enviado' : 'Message sent',
+        message: language === 'es' ? 'Tu mensaje ha sido enviado con exito, pronto me comunicare contigo' : 'Your message was sent successfully. I will contact you soon.',
         type: 'success',
       })
     } catch (error) {
       setMessage({
-        title: 'Error',
-        message: 'Ha ocurrido un error al enviar el mensaje',
+        title: language === 'es' ? 'Error' : 'Error',
+        message: language === 'es' ? 'Ha ocurrido un error al enviar el mensaje' : 'An error occurred while sending your message',
         type: 'error',
       })
     } finally {
@@ -53,15 +56,15 @@ export default function ContactForm({}: Props) {
     <form
       className='flex flex-col gap-4 w-full mt-4'
       onSubmit={handleSubmit(onSubmit)}
-      aria-label='Formulario de contacto'
+      aria-label={language === 'es' ? 'Formulario de contacto' : 'Contact form'}
       ref={form}
     >
       {/**Email */}
       <Popover>
         <motion.input
           type="text"
-          aria-label='Tu correo electronico'
-          placeholder='Tu correo electronico'
+          aria-label={language === 'es' ? 'Tu correo electronico' : 'Your email'}
+          placeholder={language === 'es' ? 'Tu correo electronico' : 'Your email'}
           className='input-text'
           transition={{delay: 0.2}}
           {...fadeIn}
@@ -74,8 +77,8 @@ export default function ContactForm({}: Props) {
       <Popover>
         <motion.input
           type="text"
-          aria-label='Asunto'
-          placeholder='Asunto'
+          aria-label={language === 'es' ? 'Asunto' : 'Subject'}
+          placeholder={language === 'es' ? 'Asunto' : 'Subject'}
           className='input-text'
           transition={{delay: 0.4}}
           {...fadeIn}
@@ -87,8 +90,8 @@ export default function ContactForm({}: Props) {
       {/**Message */}
       <Popover>
         <motion.textarea
-          placeholder='Mensaje'
-          aria-label='Mensaje'
+          placeholder={language === 'es' ? 'Mensaje' : 'Message'}
+          aria-label={language === 'es' ? 'Mensaje' : 'Message'}
           className='input-text'
           transition={{delay: 0.6}}
           {...fadeIn}
@@ -101,10 +104,10 @@ export default function ContactForm({}: Props) {
       <button
         type='submit'
         className='btn-gradient w-full disabled:opacity-75'
-        aria-label='Enviar mensaje'
+        aria-label={language === 'es' ? 'Enviar mensaje' : 'Send message'}
         disabled={loading}
       >
-        Enviar mensaje
+        {language === 'es' ? 'Enviar mensaje' : 'Send message'}
         {loading 
           ? <BiLoaderAlt className='animate-spin text-xl'/>
           : <HiMail className="text-xl"/>  

@@ -11,6 +11,7 @@ import { motion } from 'framer-motion';
 import Tooltip from '@/components/pure/tooltip/Tooltip'
 import { SiGithub } from 'react-icons/si'
 import { flyLeft, flyRight } from '@/animations/anim'
+import { useLanguage } from '@/context/LanguageContext';
 
 type Props = {
   project: DetailedProject
@@ -19,6 +20,7 @@ type Props = {
 
 export default function ProjectCard({index, project}: Props) {
   const [IsOpen, setIsOpen] = useState(false)
+  const { language } = useLanguage()
 
   return (
     <>
@@ -34,7 +36,7 @@ export default function ProjectCard({index, project}: Props) {
             showButtons={false}
             location={project.imagesLocation}
             imagesNumber={project.imagesNumber}
-            alt={`${project.name} imagenes`}
+            alt={language === 'es' ? `${project.name} imagenes` : `${project.name} images`}
           />
           <div className='absolute bottom-0 p-2 w-full z-10 flex justify-between items-center bg-black/20 backdrop-blur-sm rounded-b-2xl text-white'>
             <div className="flex gap-3 items-center">
@@ -44,10 +46,10 @@ export default function ProjectCard({index, project}: Props) {
             <div className="flex flex-end gap-3">
               <a href={project.repository} target="_blank" rel="noopener noreferrer"
                 className="btn-primary"
-                aria-label='Repositorio'  
+                aria-label={language === 'es' ? 'Repositorio' : 'Repository'}  
               >
                 <span className="hidden sm:block">
-                  Repositorio
+                  {language === 'es' ? 'Repositorio' : 'Repository'}
                 </span>
                 <SiGithub size={25}/>
               </a>
@@ -55,10 +57,10 @@ export default function ProjectCard({index, project}: Props) {
                 <a
                   href={project.live} target="_blank" rel="noopener noreferrer"
                   className="btn-primary"
-                  aria-label='Ver en vivo'
+                  aria-label={language === 'es' ? 'Ver en vivo' : 'Live demo'}
                 >
                     <span className="hidden sm:block">
-                      Ver en vivo
+                      {language === 'es' ? 'Ver en vivo' : 'Live demo'}
                     </span>
                   <VscLiveShare size={25}/>
                 </a>
@@ -85,7 +87,7 @@ export default function ProjectCard({index, project}: Props) {
             className='btn-gradient flex-end'
             onClick={() => setIsOpen(true)}
           >
-            Más información
+            {language === 'es' ? 'Mas informacion' : 'More details'}
           </button>
         </div>
       </motion.div>
@@ -100,14 +102,14 @@ export default function ProjectCard({index, project}: Props) {
         <Carousel
           location={project.imagesLocation}
           imagesNumber={project.imagesNumber}
-          alt={`${project.name} imagenes`}
+          alt={language === 'es' ? `${project.name} imagenes` : `${project.name} images`}
         />
         <div className="flex flex-col gap-3 mt-6">
           <Disclosure>
             {({ open }) => (
               <>
                 <Disclosure.Button className="rounded-lg flex justify-between items-center py-2 px-3 w-full transition ease-in-out bg-white hover:bg-gray-100 dark:bg-slate-800 shadow-sm border dark:border-none">
-                  <h4 className="text-sm sm:text-base">Descripción</h4>
+                  <h4 className="text-sm sm:text-base">{language === 'es' ? 'Descripcion' : 'Description'}</h4>
                   <HiChevronDown
                     size={25}
                     className={open ? 'rotate-180 transform' : ''}
@@ -119,7 +121,7 @@ export default function ProjectCard({index, project}: Props) {
               </>
             )}
           </Disclosure>
-          <h4>Lenguajes y tecnologías usados</h4>
+          <h4>{language === 'es' ? 'Lenguajes y tecnologias usados' : 'Languages and technologies used'}</h4>
           <div className="flex gap-3 text-4xl">
             {project.technologies.map((technology) => (
               <Tooltip
@@ -140,7 +142,7 @@ export default function ProjectCard({index, project}: Props) {
           </div>
           {project.mainLibraries && (<Listbox as='div' className="relative">
             <Listbox.Button className="rounded-lg flex justify-between items-center py-2 px-3 w-full transition ease-in-out bg-white hover:bg-gray-100 dark:bg-slate-800 shadow-sm border dark:border-none">
-              <h4 className="text-sm sm:text-base">Librerías y herramientas usadas</h4>
+              <h4 className="text-sm sm:text-base">{language === 'es' ? 'Librerias y herramientas usadas' : 'Libraries and tools used'}</h4>
               <HiOutlineSelector size={25}/>
             </Listbox.Button>
             <Listbox.Options 
@@ -167,7 +169,7 @@ export default function ProjectCard({index, project}: Props) {
               ))}
             </Listbox.Options>
           </Listbox>)}
-          <h4>¿Qué aprendí?</h4>
+          <h4>{language === 'es' ? 'Que aprendi?' : 'What I learned'}</h4>
           <p className="text-sm text-gray-700 dark:text-gray-400">
             {project.learned}
           </p>
@@ -176,17 +178,17 @@ export default function ProjectCard({index, project}: Props) {
         <div className="flex w-full justify-end gap-4 mt-4">
           <a href={project.repository} target="_blank" rel="noopener noreferrer"
             className="btn-primary-outline"
-            aria-label="Repositorio"
+            aria-label={language === 'es' ? 'Repositorio' : 'Repository'}
           >
-            Repositorio
+            {language === 'es' ? 'Repositorio' : 'Repository'}
             <SiGithub size={25}/>
           </a>
           {project.live && (
             <a href={project.live} target="_blank" rel="noopener noreferrer"
               className="btn-primary-outline"
-              aria-label="Ver en vivo"
+              aria-label={language === 'es' ? 'Ver en vivo' : 'Live demo'}
             >
-              Ver en vivo
+              {language === 'es' ? 'Ver en vivo' : 'Live demo'}
               <VscLiveShare size={25}/>
             </a>)
           }

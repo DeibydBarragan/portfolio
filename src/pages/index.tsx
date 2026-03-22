@@ -8,12 +8,15 @@ import Projects from '@/components/sections/projects/Projects';
 import Contact from '@/components/sections/contact/Contact';
 import UpButton from '@/components/pure/upButton/UpButton';
 import Head from 'next/head';
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Home(): JSX.Element {
+  const { language } = useLanguage()
+
   return (
     <>
       <Head>
-        <title>Deibyd Barragán | Portafolio</title>
+        <title>{language === 'es' ? 'Deibyd Barragan | Portafolio' : 'Deibyd Barragan | Portfolio'}</title>
       </Head>
       <Layout>
         <Hero/>

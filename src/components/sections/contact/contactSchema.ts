@@ -1,14 +1,16 @@
 import * as yup from 'yup'
+import { Language } from '@/context/LanguageContext'
 
-export const contactSchema = yup.object().shape({
-  email: yup
-    .string()
-    .email('Por favor ingresa un correo válido')
-    .required('Por favor ingresa tu correo electrónico'),
-  subject: yup
-    .string()
-    .required('Por favor ingresa un asunto'),
-  message: yup
-    .string()
-    .required('Por favor ingresa tu mensaje')
-})
+export const getContactSchema = (language: Language) =>
+  yup.object().shape({
+    email: yup
+      .string()
+      .email(language === 'es' ? 'Por favor ingresa un correo valido' : 'Please enter a valid email')
+      .required(language === 'es' ? 'Por favor ingresa tu correo electronico' : 'Please enter your email'),
+    subject: yup
+      .string()
+      .required(language === 'es' ? 'Por favor ingresa un asunto' : 'Please enter a subject'),
+    message: yup
+      .string()
+      .required(language === 'es' ? 'Por favor ingresa tu mensaje' : 'Please enter your message')
+  })

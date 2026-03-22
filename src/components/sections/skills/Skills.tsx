@@ -1,14 +1,17 @@
 import { Tab } from "@headlessui/react"
 import SkillCard from "./skillCard/SkillCard"
-import { categories } from "./skills.data"
+import { getCategories } from "./skills.data"
 import Section from "../Section"
 import BgShapes from "@/components/pure/bgShapes/BgShapes";
 import classNames from "classnames";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/context/LanguageContext";
 
 type Props = {}
 
 export default function Skills({}: Props) {
+  const { language } = useLanguage()
+  const categories = getCategories(language)
 
   return (
     <Section
@@ -21,7 +24,7 @@ export default function Skills({}: Props) {
       <BgShapes
         className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 h-72 w-72 top-30 right-10"
       />
-      <h2>Habilidades</h2>
+      <h2>{language === 'es' ? 'Habilidades' : 'Skills'}</h2>
       <Tab.Group>
         <Tab.List className="font-semibold bg-white/70 dark:bg-zinc-950/70 backdrop-blur-sm shadow-md dark:border-nonefont-semibold flex overflow-x-scroll rounded-xl md:overflow-x-auto gap-4 p-2 justify-start  md:justify-evenly">
           {categories.map((category, index) => (

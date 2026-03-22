@@ -5,6 +5,7 @@ import { HiOutlineMenu } from 'react-icons/hi'
 import { HiOutlineX } from 'react-icons/hi'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, Transition } from '@headlessui/react'
+import { useLanguage } from '@/context/LanguageContext'
 
 type Props = {
   routes: Route[]
@@ -13,12 +14,13 @@ type Props = {
 export default function MenuLinks({routes}: Props) {
 
   const [isOpen, setOpen] = useState(false)
+  const { language } = useLanguage()
 
   return (
     <Menu as="div" className="relative md:hidden pt-2">
       <Menu.Button
         onClick={()=>setOpen(!isOpen)}
-        aria-label='Botón de menú	'  
+        aria-label={language === 'es' ? 'Boton de menu' : 'Menu button'}  
       >
         {isOpen ?
           <HiOutlineX className='nav-icons'/>

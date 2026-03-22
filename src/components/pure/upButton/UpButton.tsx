@@ -1,13 +1,16 @@
 import { useState, useEffect } from 'react'
 import { HiArrowUp } from 'react-icons/hi'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Link, scroller } from 'react-scroll'
+import { scroller } from 'react-scroll'
 import { flyUp } from '@/animations/anim'
+import { useLanguage } from '@/context/LanguageContext'
 
 type Props = {}
 
 export default function UpButton({}: Props) {
   const [show, setShow] =useState(false)
+  const { language } = useLanguage()
+
   useEffect(() => {
     window.addEventListener('scroll', () => {
       if (window.scrollY > 100) {
@@ -34,7 +37,7 @@ export default function UpButton({}: Props) {
     <AnimatePresence>
       {show && (<motion.button
         className='bottom-8 cursor-pointer right-8 sm:bottom-12 sm:right-12 p-3 fixed rounded-full text-white z-40 bg-gradient-to-r from-indigo-800 via-purple-600 to-orange-600  hover:from-indigo-700 hover:via-purple-500 hover:to-orange-500 transition ease-in-out duration-200'
-        aria-label='Ir arriba'
+        aria-label={language === 'es' ? 'Ir arriba' : 'Go to top'}
         onClick={handleClick}
         whileTap={{scale: 0.9}}
         {...flyUp}

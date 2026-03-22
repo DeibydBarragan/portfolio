@@ -4,23 +4,26 @@ import {SiGithub} from "react-icons/si";
 import {VscLiveShare} from "react-icons/vsc";
 import {motion} from "framer-motion";
 import {fadeIn} from "@/animations/anim";
+import { useLanguage } from "@/context/LanguageContext";
 
 type Props = {
     project: Project
 }
 export default function OtherProjectCard({ project }: Props) {
+    const { language } = useLanguage()
+
     return (
         <motion.div className='group relative rounded-2xl border shadow-sm dark:border-none' {...fadeIn}>
             <a
                 href={project.live || project.repository|| '/'}
                 target="_blank" rel="noopener noreferrer"
-                aria-label='Ver en vivo'
+                aria-label={language === 'es' ? 'Ver en vivo' : 'Live demo'}
             >
                 <Carousel
                     showButtons={false}
                     location={project.imagesLocation}
                     imagesNumber={project.imagesNumber}
-                    alt={`${project.name} imagenes`}
+                    alt={language === 'es' ? `${project.name} imagenes` : `${project.name} images`}
                     className='transition ease-out group-hover:opacity-90 dark:group-hover:opacity-60'
                 />
                 <div className='absolute inset-0 flex-col rounded-2xl justify-center items-center hidden group-hover:flex group-hover:backdrop-blur-sm'>
@@ -29,7 +32,7 @@ export default function OtherProjectCard({ project }: Props) {
                         {project.repository && (<a
                             href={project.repository} target="_blank" rel="noopener noreferrer"
                             className='transition ease-out hover:text-indigo-600'
-                            aria-label='Repositorio'
+                            aria-label={language === 'es' ? 'Repositorio' : 'Repository'}
                         >
                             <SiGithub size={30} className='cursor-pointer'/>
                         </a>)}
@@ -37,7 +40,7 @@ export default function OtherProjectCard({ project }: Props) {
                             <a
                                 href={project.live} target="_blank" rel="noopener noreferrer"
                                 className='transition ease-out hover:text-indigo-600'
-                                aria-label='Ver en vivo'
+                                aria-label={language === 'es' ? 'Ver en vivo' : 'Live demo'}
                             >
                                 <VscLiveShare size={30} className='cursor-pointer'/>
                             </a>
