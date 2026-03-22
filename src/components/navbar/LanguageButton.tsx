@@ -15,7 +15,7 @@ export default function LanguageButton() {
     >
       <HiTranslate className='nav-icons active:scale-90'/>
       <span className='absolute -bottom-1 -right-1 rounded bg-indigo-700 px-1 text-[10px] font-semibold leading-4 text-white'>
-        {isSpanish ? 'EN' : 'ES'}
+        {isSpanish ? 'ES' : 'EN'}
       </span>
     </button>
   )
