@@ -59,7 +59,7 @@ export default function Carousel({location, imagesNumber, alt, className, showBu
               width={720}
               height={480}
               quality={100}
-              className={`w-full h-auto rounded-2xl transition ease-in-out duration-300 ${index === currentSlide ? 'opacity-100' : 'absolute opacity-0'}`}
+              className={`w-full aspect-video object-cover rounded-2xl transition ease-in-out duration-300 ${index === currentSlide ? 'opacity-100' : 'absolute opacity-0'}`}
             />
         ))}
     </div>
