@@ -198,6 +198,12 @@ export const getProjectsData = (language: Language): DetailedProject[] => {
 
 export const getOtherProjects = (language: Language): Project[] => [
   {
+    name: 'SOFT MINDS — A Film & Attention Magazine',
+    live: 'https://soft-minds-magazine.vercel.app/',
+    imagesLocation: 'softminds',
+    imagesNumber: 8,
+  },
+  {
     name: 'uBudget',
     live: 'https://ubudget-eta.vercel.app/',
     imagesLocation: 'ubudget',
