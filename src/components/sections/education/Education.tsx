@@ -45,12 +45,12 @@ export default function Education({}: Props) {
         <div className="w-full my-4">
           <div className="flex justify-between items-center mb-2">
             <span className="text-sm font-medium">{language === 'es' ? 'Progreso de carrera' : 'Degree progress'}</span>
-            <span className="text-sm font-medium">61.2%</span>
+            <span className="text-sm font-medium">~70%</span>
           </div>
           <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 overflow-hidden">
             <div 
               className="bg-gradient-to-r from-blue-500 to-purple-600 h-full rounded-full transition-all duration-1000 ease-out"
-              style={{ width: '61.2%' }}
+              style={{ width: '70%' }}
             />
           </div>
         </div>
