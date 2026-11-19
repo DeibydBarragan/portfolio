@@ -1,14 +1,47 @@
 import { MdPlaylistAddCheckCircle } from "react-icons/md"
 import {DetailedProject, Project} from "./projectComponent/interfaces"
-import { FaJava, FaLaptopMedical, FaRobot } from "react-icons/fa"
-import { MdFastfood } from "react-icons/md"
-import { SiBootstrap, SiTypescript, SiSpringboot, SiPostgresql, SiNextdotjs, SiFirebase, SiHtml5, SiJavascript, SiLaravel, SiMysql, SiPhp, SiReact, SiTailwindcss, SiNodedotjs, SiSqlite, SiElectron } from "react-icons/si"
+import { FaFire, FaJava, FaLaptopMedical, FaRobot } from "react-icons/fa"
+import { SiTypescript, SiSpringboot, SiPostgresql, SiNextdotjs, SiFirebase, SiHtml5, SiJavascript, SiReact, SiTailwindcss, SiNodedotjs, SiSqlite, SiElectron } from "react-icons/si"
 import { Language } from "@/context/LanguageContext"
 
 export const getProjectsData = (language: Language): DetailedProject[] => {
   const isSpanish = language === 'es'
 
   return [
+    {
+      name: 'Ignite Suite',
+      icon: <FaFire size={36}/>,
+      shortDescription: isSpanish
+        ? 'Suite para controlar bots de Discord desde un dashboard web, con música, síntesis de voz y soundboard. Incluye un launcher de escritorio para supervisar el bot de música.'
+        : 'A suite for controlling Discord bots from a web dashboard, with music, text-to-speech, and a soundboard. It includes a desktop launcher for monitoring the music bot.',
+      longDescription: isSpanish
+        ? 'Diseñé una arquitectura de microservicios con APIs REST para conectar el dashboard web con Ignite Music e Ignite Sound. El dashboard reúne los controles de reproducción, la cola de música, la síntesis de voz y el soundboard. Desplegué Ignite Sound en AWS EC2 y desarrollé un launcher en Electron para iniciar, detener y supervisar el bot de música.'
+        : 'I designed a microservices architecture with REST APIs to connect the web dashboard to Ignite Music and Ignite Sound. The dashboard brings together playback controls, the music queue, text-to-speech, and the soundboard. I deployed Ignite Sound on AWS EC2 and built an Electron launcher to start, stop, and monitor the music bot.',
+      learned: isSpanish
+        ? 'Profundicé en la integración de servicios independientes mediante APIs REST, el despliegue en AWS EC2 y la supervisión de procesos desde una aplicación de escritorio.'
+        : 'I deepened my experience integrating independent services through REST APIs, deploying to AWS EC2, and supervising processes from a desktop app.',
+      mainLibraries: ['React', 'Discord.js', 'Supabase', 'AWS EC2'],
+      repository: 'https://github.com/DeibydBarragan/ignite-frontend',
+      relatedRepositories: [
+        { name: 'Ignite Music', url: 'https://github.com/DeibydBarragan/ignite-music' },
+        { name: 'Ignite Sound', url: 'https://github.com/DeibydBarragan/ignite-sound' },
+        { name: 'Ignite Music Desktop', url: 'https://github.com/DeibydBarragan/ignite-music-desktop' },
+      ],
+      technologies: [
+        { name: 'Next.js', icon: <SiNextdotjs className='text-black dark:text-white'/> },
+        { name: 'Node.js', icon: <SiNodedotjs className='text-green-500'/> },
+        { name: 'Electron', icon: <SiElectron className='text-blue-400'/> },
+      ],
+      languages: [
+        { name: 'TypeScript', icon: <SiTypescript className='text-blue-600'/> },
+        { name: 'JavaScript', icon: <SiJavascript className='text-yellow-500'/> },
+      ],
+      imagesLocation: 'ignite',
+      imagesNumber: 4,
+      imageDescriptions: isSpanish
+        ? ['Dashboard web de Ignite con los controles de música', 'Launcher de Ignite Music con los controles del bot y el registro de actividad', 'Vista de voz y síntesis de voz de Ignite', 'Soundboard del dashboard web de Ignite']
+        : ['Ignite web dashboard with music controls', 'Ignite Music desktop launcher with bot controls and activity log', 'Ignite voice and text-to-speech view', 'Soundboard in the Ignite web dashboard'],
+    },
     {
       name: 'Pretty Exam',
       icon: <FaRobot size={40}/> ,
@@ -148,51 +181,6 @@ export const getProjectsData = (language: Language): DetailedProject[] => {
       imagesLocation: 'eps',
       imagesNumber: 15,
     },
-    {
-      name: 'Sena Food-Site',
-      icon: <MdFastfood size={40}/>,
-      shortDescription: isSpanish
-        ? 'Aplicacion tipo e-commerce autoadministrable para gestionar productos, pedidos y usuarios de un restaurante, en una interfaz amigable y responsiva.'
-        : 'A self-managed e-commerce style application to handle restaurant products, orders, and users through a friendly and responsive interface.',
-      longDescription: isSpanish
-        ? 'Una aplicacion tipo e-commerce autoadministrable para gestionar productos, pedidos y usuarios de un restaurante en una interfaz amigable y responsiva. Fue desarrollada para el restaurante de una sede del SENA en Bogota, Colombia. Tiene roles de invitado, consumidor, vendedor y administrador. Como consumidor se pueden agregar productos al carrito y hacer pedidos; como vendedor, gestionar productos y pedidos; como administrador, gestionar productos, usuarios y comentarios de soporte. Fue desarrollada con Laravel y PHP para backend, Bootstrap para frontend y MySQL como base de datos.'
-        : 'A self-managed e-commerce style application for managing restaurant products, orders, and users through a friendly, responsive interface. It was built for a restaurant at a SENA campus in Bogota, Colombia. It supports guest, customer, seller, and admin roles. Customers can add products to cart and place orders; sellers can manage products and orders; admins can manage products, users, and support comments. The system was built with Laravel and PHP on the backend, Bootstrap on the frontend, and MySQL as the database.',
-      learned: isSpanish
-        ? 'Este proyecto fue mi primera oportunidad para aprender a desarrollar aplicaciones full-stack usando frameworks y herramientas modernas. Aprendi a crear REST APIs, autenticacion y manejo de roles, disenos responsivos y amigables, y realice mi primer despliegue en Hostinger. Tambien aprendi a disenar bases de datos relacionales y gestionarlas con MySQL.'
-        : 'This project was my first opportunity to build full-stack applications using modern frameworks and tools. I learned to create REST APIs, authentication flows, and role-based access control, as well as responsive user-friendly interfaces. I also made my first deployment on Hostinger and learned relational database design and management with MySQL.',
-      repository: 'https://github.com/DeibydBarragan/sena-food-site',
-      technologies: [
-        {
-          name: 'Laravel',
-          version: '9',
-          icon: <SiLaravel className='text-red-500'/>,
-        },
-        {
-          name: 'Bootstrap',
-          version: '4',
-          icon: <SiBootstrap className='text-purple-500'/>,
-        },
-        {
-          name: 'MySQL',
-          version: '8',
-          icon: <SiMysql className='text-blue-500'/>,
-        }
-      ],
-      languages: [
-        {
-          name: 'PHP',
-          version: '8.1.0',
-          icon: <SiPhp className='text-blue-600'/>,
-        },
-        {
-          name: 'HTML',
-          version: '5',
-          icon: <SiHtml5 className='text-red-500'/>,
-        },
-      ],
-      imagesLocation: 'foodsite',
-      imagesNumber: 28,
-    }
   ]
 }
 
@@ -201,7 +189,7 @@ export const getOtherProjects = (language: Language): Project[] => [
     name: 'Soft Minds Magazine',
     live: 'https://soft-minds-magazine.vercel.app/',
     imagesLocation: 'softminds',
-    imagesNumber: 8,
+    imagesNumber: 7,
   },
   {
     name: 'uBudget',
@@ -222,5 +210,11 @@ export const getOtherProjects = (language: Language): Project[] => [
     live: 'https://cursos-libres.vercel.app/',
     imagesLocation: 'cursoslibres',
     imagesNumber: 12,
-  }
+  },
+  {
+    name: 'Sena Food-Site',
+    repository: 'https://github.com/DeibydBarragan/sena-food-site',
+    imagesLocation: 'foodsite',
+    imagesNumber: 28,
+  },
 ]

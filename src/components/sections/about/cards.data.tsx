@@ -37,15 +37,15 @@ export const getCardsData = (language: Language) => {
       icon: <HiCode className='text-indigo-600'/>
     },
     {
-      description: 'Nivel de ingles B2',
+      description: 'Nivel de inglés B2',
       icon: <HiOutlineChatAlt2 className='text-violet-900'/>
     },
     {
-      description: 'Comunicacion',
+      description: 'Comunicación',
       icon: <HiSpeakerphone className='text-sky-500'/>
     },
     {
-      description: 'Resolucion de problemas',
+      description: 'Resolución de problemas',
       icon: <HiPuzzle className='text-red-500'/>
     },
     {

@@ -1,6 +1,4 @@
-import React from 'react'
 import Section from '../Section'
-import { motion } from 'framer-motion';
 import BgShapes from '@/components/pure/bgShapes/BgShapes';
 import EducationCard from '@/components/pure/educationCard/EducationCard';
 import { fadeIn } from '@/animations/anim';
@@ -30,31 +28,70 @@ export default function Experience({}: Props) {
         className='h-72 w-72 top-0 left-0 bg-cyan-500 hidden md:block'
       />
       <h2 className="mt-4 md:mt-24">{language === 'es' ? 'Experiencia' : 'Experience'}</h2>
-      <EducationCard
-        delay={0.3}
-      >
-        <span className='font-semibold'>
-          {language === 'es'
-            ? 'Aula STEAM - Universidad Nacional de Colombia - 10 meses (8 horas por semana)'
-            : 'STEAM Classroom - National University of Colombia - 10 months (8 hours per week)'}
-        </span>
-        <p>
-          {language === 'es'
-            ? 'Durante 4 semestres participe activamente en el Aula STEAM de la Universidad Nacional de Colombia, realizando proyectos de desarrollo y mejora que impactaron positivamente el funcionamiento del aula.'
-            : 'During four semesters I actively participated in the STEAM Classroom at the National University of Colombia, delivering development and improvement projects that had a positive impact on classroom operations.'}
+      <EducationCard delay={0.3}>
+        <h3 className='text-lg font-semibold'>
+          {language === 'es' ? 'Estudiante auxiliar de desarrollo web y QA' : 'Student Assistant, Web Development and QA'}
+        </h3>
+        <p className='font-medium'>
+          {language === 'es' ? 'Bienestar Universitario, Universidad Nacional de Colombia' : 'Student Wellbeing, National University of Colombia'}
         </p>
-        <p>
-          <strong>{language === 'es' ? 'Proyectos desarrollados:' : 'Projects delivered:'}</strong>
-          <br/>• {language === 'es' ? 'Automatizacion de estadisticas del Aula STEAM mediante Power BI' : 'Automation of STEAM Classroom statistics with Power BI'}
-          <br/>• {language === 'es' ? 'Diseno y desarrollo del sistema de solicitud de equipos y asesorias del aula' : 'Design and development of the classroom equipment and mentoring request system'}
-          <br/>• {language === 'es' ? 'Implementacion de un chat inteligente para acceso a la informacion y orientacion dentro del aula' : 'Implementation of an intelligent chat assistant for information access and orientation inside the classroom'}
-          <br/>• {language === 'es' ? 'Desarrollo de un sistema para la conduccion de un carro AWS Deepracer usando tecnologias web y Linux' : 'Development of a control system for an AWS DeepRacer car using web technologies and Linux'}
+        <p className='text-sm'>
+          {language === 'es' ? 'Mayo a octubre de 2026 · 10 horas por semana' : 'May to October 2026 · 10 hours per week'}
         </p>
+        <ul className='mt-3 list-disc space-y-2 pl-5'>
+          <li>{language === 'es'
+            ? 'Desarrollé servicios REST y tareas programadas para gestionar cupos, registrar asistencia con códigos QR y calcular horas acumuladas.'
+            : 'I developed REST services and scheduled tasks to manage capacity, track attendance with QR codes, and calculate accumulated hours.'}</li>
+          <li>{language === 'es'
+            ? 'Conecté las interfaces a las APIs y unifiqué los componentes de tablas y navegación según el diseño en Figma.'
+            : 'I connected interfaces to live APIs and standardized table and navigation components to match the Figma designs.'}</li>
+          <li>{language === 'es'
+            ? 'Realicé pruebas funcionales, de concurrencia y de acceso basado en roles (RBAC) en escritorio y móvil. Gestioné defectos y casos de borde en Plane.'
+            : 'I ran functional, concurrency, and role-based access control (RBAC) tests on desktop and mobile, and tracked defects and edge cases in Plane.'}</li>
+        </ul>
+      </EducationCard>
+      <EducationCard delay={0.45}>
+        <h3 className='text-lg font-semibold'>
+          {language === 'es' ? 'Desarrollador full-stack y líder de frontend' : 'Full-Stack Developer and Frontend Lead'}
+        </h3>
+        <p className='font-medium'>
+          {language === 'es' ? 'Fundación Jaime Benítez Tobón, Hogar Estudiantil' : 'Jaime Benítez Tobón Foundation, Student Residence'}
+        </p>
+        <p className='text-sm'>
+          {language === 'es' ? 'Marzo a agosto de 2026' : 'March to August 2026'}
+        </p>
+        <p className='mt-3'>
+          {language === 'es' ? 'Lideré el frontend de ' : 'I led frontend development for '}
+          <Link href="https://www.hogarestudiantil.org/" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 underline dark:text-blue-400">FJTB App</Link>
+          {language === 'es'
+            ? ', la plataforma que digitaliza la gestión del hogar estudiantil. La fundación certificó el despliegue y su operación en producción.'
+            : ', the platform that digitizes student residence operations. The foundation certified its deployment and operation in production.'}
+        </p>
+        <ul className='list-disc space-y-2 pl-5'>
+          <li>{language === 'es'
+            ? 'Definí el sistema de diseño e implementé componentes adaptables con Next.js 16, React 19, TypeScript, Tailwind CSS y shadcn/ui.'
+            : 'I created the design system and implemented responsive components with Next.js 16, React 19, TypeScript, Tailwind CSS, and shadcn/ui.'}</li>
+          <li>{language === 'es'
+            ? 'Desarrollé el backend con Express, MySQL y Sequelize. Usé agentes de IA para organizar e implementar funcionalidades con el equipo.'
+            : 'I developed the backend with Express, MySQL, and Sequelize. I used AI agents to plan and implement features with the team.'}</li>
+        </ul>
+      </EducationCard>
+      <EducationCard delay={0.6}>
+        <h3 className='text-lg font-semibold'>
+          {language === 'es' ? 'Desarrollador e instructor de programación' : 'Developer and Programming Instructor'}
+        </h3>
+        <p className='font-medium'>
+          {language === 'es' ? 'Aula STEAM, Universidad Nacional de Colombia' : 'STEAM Classroom, National University of Colombia'}
+        </p>
+        <p className='text-sm'>
+          {language === 'es' ? 'Voluntariado · 16 meses durante 4 semestres · 8 horas por semana' : 'Volunteer · 16 months over 4 semesters · 8 hours per week'}
+        </p>
+        <ul className='list-disc space-y-2 pl-5'>
+          <li>{language === 'es' ? 'Desarrollé un sistema de conducción para un vehículo AWS DeepRacer con tecnologías web y Linux.' : 'I built a control system for an AWS DeepRacer vehicle using web technologies and Linux.'}</li>
+          <li>{language === 'es' ? 'Automaticé las estadísticas de uso con Power BI, participé en el sistema de solicitudes de equipos y asesorías, y desarrollé un chat para orientar a quienes usaban el aula.' : 'I automated usage statistics with Power BI, contributed to the equipment and mentoring request system, and built a chat assistant to guide classroom users.'}</li>
+        </ul>
         <p>
-          <strong>{language === 'es' ? 'Participacion activa:' : 'Active participation:'}</strong>
-          <br/>• {language === 'es' ? 'Capacitaciones relacionadas con programacion y herramientas digitales' : 'Training activities on programming and digital tools'}
-          <br/>• {language === 'es' ? 'Apoyo en asesorias de programacion a otros miembros de la comunidad' : 'Programming mentoring support for other community members'}
-          <br/>• {language === 'es' ? 'Obtencion de insignia digital como ' : 'Earned digital badges as '}
+          {language === 'es' ? 'Impartí capacitaciones y asesorías en programación y herramientas digitales. La universidad me otorgó las insignias de ' : 'I taught and mentored community members in programming and digital tools. The university awarded me the '}
           <Link 
             href="https://www.acreditta.com/credential/c8b76042-b39f-40ed-b173-c0066512195f?utm_source=copy&resource_type=badge&resource=c8b76042-b39f-40ed-b173-c0066512195f" 
             target="_blank"
@@ -69,7 +106,7 @@ export default function Experience({}: Props) {
             className="font-bold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline transition-colors"
           >
             {language === 'es' ? 'Instructor en IA para la vida' : 'AI for Life Instructor'}
-          </Link> {language === 'es' ? 'expedidas por la Universidad Nacional de Colombia' : 'issued by the National University of Colombia'}
+          </Link>{language === 'es' ? '.' : ' badges.'}
         </p>
         <div className="flex justify-center my-4 gap-6">
           <Link
@@ -101,38 +138,21 @@ export default function Experience({}: Props) {
             />
           </Link>
         </div>
-        <p>
-          {language === 'es'
-            ? 'Esta experiencia me permitio aplicar mis conocimientos tecnicos en un entorno real, trabajar en equipo y contribuir al desarrollo de herramientas que mejoraron la gestion y funcionamiento del aula, mientras compartia conocimientos con la comunidad universitaria. Mi rol como instructor certificado de Python me permitio guiar y formar a otros estudiantes en este lenguaje de programacion.'
-            : 'This experience allowed me to apply my technical knowledge in a real environment, work collaboratively, and contribute to tools that improved classroom management and operations while sharing knowledge with the university community. My role as a certified Python instructor allowed me to guide and train other students in this programming language.'}
-        </p>
       </EducationCard>
-      <EducationCard
-        delay={0.6}
-      >
-        <span className='font-semibold'>
-          {language === 'es'
-            ? 'Desarrollo de plataforma web para proyectos de ingenieria civil - 4 meses (10 horas por semana)'
-            : 'Web platform development for civil engineering projects - 4 months (10 hours per week)'}
-        </span>
+      <EducationCard delay={0.75}>
+        <h3 className='text-lg font-semibold'>
+          {language === 'es' ? 'Estudiante auxiliar de desarrollo frontend' : 'Student Assistant, Frontend Development'}
+        </h3>
+        <p className='font-medium'>DUSCUN, {language === 'es' ? 'Universidad Nacional de Colombia' : 'National University of Colombia'}</p>
+        <p className='text-sm'>
+          {language === 'es' ? '2025 · 4 meses · 10 horas por semana' : '2025 · 4 months · 10 hours per week'}
+        </p>
         <p>
           {language === 'es' ? 'Como estudiante auxiliar participe en el desarrollo de la plataforma ' : 'As a student assistant, I participated in the development of the '}
           <Link href="https://duscun.vercel.app/" target="_blank" rel="noopener noreferrer" className="font-bold text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 underline transition-colors">DUSCUN</Link>
           {language === 'es'
-            ? ', una plataforma web disenada para gestionar y mostrar proyectos de ingenieria civil desarrollados por estudiantes de la Universidad Nacional de Colombia. Mi rol principal fue el desarrollo frontend con NextJS, Tailwind CSS y React, trabajando en colaboracion con un equipo multidisciplinario para crear una experiencia de usuario intuitiva y atractiva. En esta plataforma tambien desarrolle junto a mi companera, una calculadora para estimar la conductividad de la solucion de poros del concreto.'
-            : ', a web platform designed to manage and showcase civil engineering projects developed by students from the National University of Colombia. My main role was frontend development with NextJS, Tailwind CSS, and React, collaborating with a multidisciplinary team to create an intuitive and attractive user experience. I also co-developed a calculator to estimate concrete pore solution conductivity.'}
-        </p>
-      </EducationCard>
-      <EducationCard
-        delay={0.9}
-      >
-        <span className='font-semibold'>
-          {language === 'es' ? 'Desarrollo de proyectos academicos y personales - 6 meses' : 'Academic and personal project development - 6 months'}
-        </span>
-        <p>
-          {language === 'es'
-            ? 'Durante mi carrera universitaria he desarrollado diversos proyectos para las asignaturas, trabajando con tecnologias como Node.js, Electron, SQLite, React y JavaScript. Estos proyectos academicos me han permitido aprender metodologias agiles, arquitectura de software y el ciclo completo de desarrollo de aplicaciones. Paralelamente, en mi tiempo libre, he creado proyectos personales para profundizar en diferentes tecnologias, utilizando NextJS, React, Tailwind y diversas librerias del lado del frontend. Tambien he desarrollado APIs con Spring Boot, Express y Laravel, implementando bases de datos relacionales y no relacionales con MySQL, MongoDB y Firebase. Me apasiona seguir aprendiendo y mejorando mis habilidades tecnicas, y estos proyectos me han permitido precisamente eso, mientras desarrollo soluciones creativas y practicas.'
-            : 'Throughout my university studies I have developed different projects for courses using technologies such as Node.js, Electron, SQLite, React, and JavaScript. These academic projects helped me learn agile methodologies, software architecture, and the full application development lifecycle. At the same time, in my free time I built personal projects to deepen my knowledge of different technologies, using NextJS, React, Tailwind, and several frontend libraries. I have also built APIs with Spring Boot, Express, and Laravel, implementing relational and non-relational databases with MySQL, MongoDB, and Firebase. I am passionate about continuing to learn and improve my technical skills, and these projects have been key for that while I build creative and practical solutions.'}
+            ? ', una plataforma que gestiona y exhibe proyectos de ingeniería civil. Construí interfaces con Next.js, React y Tailwind CSS, y desarrollé en equipo una calculadora para estimar la conductividad de la solución de poros del concreto.'
+            : ' web platform for managing and showcasing civil engineering projects. I built interfaces with Next.js, React, and Tailwind CSS and co-developed a calculator to estimate concrete pore solution conductivity.'}
         </p>
       </EducationCard>
     </Section>

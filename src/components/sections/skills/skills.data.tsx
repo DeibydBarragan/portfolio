@@ -1,7 +1,8 @@
 import { SiJavascript, SiDocker, SiTypescript, SiPostgresql, SiPostman, SiMongodb, SiCss3, SiSpringboot, SiHtml5, SiPhp, SiExpress, SiLaravel, SiMysql, SiFirebase, SiReact, SiTailwindcss,SiBootstrap, SiNextdotjs, SiChakraui, SiGit, SiGithub, SiFigma, SiNpm, SiVisualstudiocode, SiNotion, SiDaisyui} from "react-icons/si"
 
 import { HiCode } from "react-icons/hi";
-import { HiServerStack, HiCube } from "react-icons/hi2";
+import { HiServerStack, HiCube, HiCircleStack, HiOutlineCommandLine, HiSparkles, HiOutlineRocketLaunch } from "react-icons/hi2";
+import { SiNodedotjs, SiOpenai, SiPython, SiSqlite } from "react-icons/si";
 import { BiCodeCurly } from "react-icons/bi";
 import { Categorie } from "./skillCard/interfaces";
 import {FaJava} from "react-icons/fa";
@@ -47,6 +48,18 @@ export const getCategories = (language: Language): Categorie[] => {
         version: '17'
       },
       {
+        name: 'Python',
+        color: 'text-blue-500',
+        icon: <SiPython/>,
+        level: 'Instructor',
+      },
+      {
+        name: 'SQL',
+        color: 'text-sky-600',
+        icon: <HiCircleStack/>,
+        level: language === 'es' ? 'Consultas y modelado' : 'Queries and data modeling',
+      },
+      {
         name: 'HTML',
         color: 'text-red-500',
         icon: <SiHtml5/>,
@@ -65,7 +78,7 @@ export const getCategories = (language: Language): Categorie[] => {
         color: 'text-blue-600',
         icon: <SiPhp/>,
         level: levels.fundamentals,
-        version: '7'
+        version: '7/8'
       }
     ]
   },
@@ -73,6 +86,12 @@ export const getCategories = (language: Language): Categorie[] => {
     name: 'Backend',
     icon: <HiServerStack/>,
     skills: [
+      {
+        name: 'Node.js',
+        color: 'text-green-600',
+        icon: <SiNodedotjs/>,
+        level: language === 'es' ? 'APIs REST y servicios' : 'REST APIs and services',
+      },
       {
         name: 'Spring Boot',
         color: 'text-green-500',
@@ -82,7 +101,7 @@ export const getCategories = (language: Language): Categorie[] => {
       },
       {
         name: 'Express',
-        color: 'text-white',
+        color: 'text-black dark:text-white',
         icon: <SiExpress/>,
         level: levels.fundamentals,
         version: '4.18'
@@ -94,6 +113,12 @@ export const getCategories = (language: Language): Categorie[] => {
         level: levels.fundamentals,
         version: '9'
       },
+    ]
+  },
+  {
+    name: language === 'es' ? 'Bases de datos' : 'Databases',
+    icon: <HiCircleStack/>,
+    skills: [
       {
         name: 'Firebase',
         color: 'text-yellow-500',
@@ -121,7 +146,13 @@ export const getCategories = (language: Language): Categorie[] => {
         icon: <SiMysql/>,
         level: levels.fundamentals,
         version: '8'
-      },  
+      },
+      {
+        name: 'SQLite',
+        color: 'text-blue-600',
+        icon: <SiSqlite/>,
+        level: language === 'es' ? 'Persistencia local' : 'Local storage',
+      },
     ]
   },
   {
@@ -133,7 +164,7 @@ export const getCategories = (language: Language): Categorie[] => {
         color: 'text-blue-500',
         icon: <SiReact/>,
         level: levels.intermediate,
-        version: '16'
+        version: '19'
       },
       {
         name: 'Tailwind CSS',
@@ -143,11 +174,17 @@ export const getCategories = (language: Language): Categorie[] => {
         version: '3'
       },
       {
-        name: 'NextJS',
+        name: 'Next.js',
         color: 'text-black dark:text-white',
         icon: <SiNextdotjs/>,
         level: levels.intermediate,
-        version: '13'
+        version: '16'
+      },
+      {
+        name: 'shadcn/ui',
+        color: 'text-black dark:text-white',
+        icon: <BiCodeCurly/>,
+        level: language === 'es' ? 'Sistemas de diseño' : 'Design systems',
       },
       {
         name: 'ChakraUI',
@@ -172,7 +209,6 @@ export const getCategories = (language: Language): Categorie[] => {
         color: 'text-purple-500',
         icon: <SiBootstrap/>,
         level: levels.fundamentals,
-        version: '8'
       },
     ]
   },
@@ -232,6 +268,36 @@ export const getCategories = (language: Language): Categorie[] => {
         level: levels.advanced,
       }
     ]
-  }
+  },
+  {
+    name: language === 'es' ? 'IA' : 'AI',
+    icon: <HiSparkles/>,
+    skills: [
+      {
+        name: 'Gemini API',
+        color: 'text-blue-500',
+        icon: <HiSparkles/>,
+        level: language === 'es' ? 'Integración de IA generativa' : 'Generative AI integration',
+      },
+      {
+        name: 'Antigravity',
+        color: 'text-violet-500',
+        icon: <HiOutlineRocketLaunch/>,
+        level: language === 'es' ? 'Desarrollo con agentes' : 'Agent-assisted development',
+      },
+      {
+        name: 'Codex',
+        color: 'text-black dark:text-white',
+        icon: <SiOpenai/>,
+        level: language === 'es' ? 'Desarrollo con agentes' : 'Agent-assisted development',
+      },
+      {
+        name: 'OpenCode',
+        color: 'text-indigo-500',
+        icon: <HiOutlineCommandLine/>,
+        level: language === 'es' ? 'Desarrollo con agentes' : 'Agent-assisted development',
+      },
+    ]
+  },
 ]
 }

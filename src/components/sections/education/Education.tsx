@@ -33,7 +33,7 @@ export default function Education({}: Props) {
         </span>
         <p>
           {language === 'es' ? 'Universidad Nacional de Colombia' : 'National University of Colombia'}
-          <br/>- {language === 'es' ? 'En curso (6 semestres completados)' : 'In progress (6 semesters completed)'}
+          <br/>- {language === 'es' ? 'En curso (7 semestres cursados)' : 'In progress (7 semesters completed)'}
           <br/>- {language === 'es' ? '2023 - Actualidad' : '2023 - Present'}
         </p>
 
@@ -76,7 +76,6 @@ export default function Education({}: Props) {
         <p>
           {language === 'es' ? 'Universidad Distrital Francisco Jose de Caldas (Todos a la U)' : 'Universidad Distrital Francisco Jose de Caldas (Todos a la U)'}
           <br/>- 2023 ({language === 'es' ? '5 meses' : '5 months'})
-          <br/>- {language === 'es' ? 'En curso' : 'In progress'}
         </p>
         <p>
           {language === 'es'

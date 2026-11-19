@@ -16,7 +16,11 @@ export default function Home(): JSX.Element {
   return (
     <>
       <Head>
-        <title>{language === 'es' ? 'Deibyd Barragan | Portafolio' : 'Deibyd Barragan | Portfolio'}</title>
+        <title>{language === 'es' ? 'Deibyd Barragán | Portafolio' : 'Deibyd Barragán | Portfolio'}</title>
+        <meta name="description" content={language === 'es'
+          ? 'Portafolio de Deibyd Santiago Barragán Gaitán, desarrollador web full-stack con experiencia en desarrollo y aseguramiento de calidad de plataformas institucionales.'
+          : 'Portfolio of Deibyd Santiago Barragán Gaitán, full-stack web developer with experience building and testing institutional platforms.'}
+        />
       </Head>
       <Layout>
         <Hero/>

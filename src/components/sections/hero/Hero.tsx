@@ -19,7 +19,7 @@ export default function Hero() {
     >
       <Image
         src="/images/foto.webp"
-        alt="Picture of the author"
+        alt={language === 'es' ? 'Retrato de Deibyd Santiago Barragán Gaitán' : 'Portrait of Deibyd Santiago Barragán Gaitán'}
         width={250}
         height={250}
         className="rounded-full"
@@ -29,21 +29,21 @@ export default function Hero() {
           transition={{delay: 0.5}}
           {...flyUp}
         >
-          Debyd Barragán
+          Deibyd Santiago Barragán Gaitán
         </motion.h3>
         <motion.h1
           transition={{delay: 0.8}}
           {...flyUp}
         >
-          {language === 'es' ? 'Desarrollador fullstack' : 'Full-stack Developer'}
+          {language === 'es' ? 'Desarrollador web full-stack' : 'Full-Stack Web Developer'}
         </motion.h1>
         <motion.p
           transition={{delay: 1.1}}
           {...flyUp}
         >
         {language === 'es'
-          ? 'Soy un desarrollador web fullstack con experiencia en NextJS, React, TypeScript, Tailwind, Express, Spring Boot e inteligencia artificial. Capaz de desarrollar y mantener aplicaciones web complejas y responsivas que integran soluciones de IA, buscando siempre la mejor experiencia de usuario, me apasiona lo que hago y siempre busco aprender y mejorar.'
-          : 'I am a full-stack web developer with experience in NextJS, React, TypeScript, Tailwind, Express, Spring Boot, and artificial intelligence. I can build and maintain complex, responsive web applications that integrate AI solutions, always focused on delivering the best user experience. I love what I do and I am always looking to learn and improve.'}
+          ? 'Estudio Ingeniería de Sistemas y Computación en la Universidad Nacional de Colombia. Tengo experiencia en desarrollo web y aseguramiento de calidad (QA), desde construir interfaces y APIs REST hasta probar y poner en producción plataformas institucionales.'
+          : 'I study Systems and Computer Engineering at the National University of Colombia. My experience spans web development and quality assurance (QA), from building interfaces and REST APIs to testing and launching institutional platforms.'}
         </motion.p>
         <motion.div className="flex gap-3 flex-wrap"
           transition={{delay: 1.6}}

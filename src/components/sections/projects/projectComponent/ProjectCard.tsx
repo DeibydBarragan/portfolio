@@ -36,6 +36,7 @@ export default function ProjectCard({index, project}: Props) {
             showButtons={false}
             location={project.imagesLocation}
             imagesNumber={project.imagesNumber}
+            imageDescriptions={project.imageDescriptions}
             alt={language === 'es' ? `${project.name} imagenes` : `${project.name} images`}
           />
           <div className='absolute bottom-0 p-2 w-full z-10 flex justify-between items-center bg-black/20 backdrop-blur-sm rounded-b-2xl text-white'>
@@ -77,7 +78,7 @@ export default function ProjectCard({index, project}: Props) {
             {project.technologies.map((technology, index) => (
               <Tooltip
                 key={`${technology.name}0-${index}`}
-                description={`${technology.name} ${technology.version}`}
+                description={technology.version ? `${technology.name} ${technology.version}` : technology.name}
               >
                 {technology.icon}
               </Tooltip>
@@ -102,6 +103,7 @@ export default function ProjectCard({index, project}: Props) {
         <Carousel
           location={project.imagesLocation}
           imagesNumber={project.imagesNumber}
+          imageDescriptions={project.imageDescriptions}
           alt={language === 'es' ? `${project.name} imagenes` : `${project.name} images`}
         />
         <div className="flex flex-col gap-3 mt-6">
@@ -126,7 +128,7 @@ export default function ProjectCard({index, project}: Props) {
             {project.technologies.map((technology) => (
               <Tooltip
                 key={`${technology.name}-${index}`}
-                description={`${technology.name} ${technology.version}`}
+                description={technology.version ? `${technology.name} ${technology.version}` : technology.name}
               >
                 {technology.icon}
               </Tooltip>
@@ -134,7 +136,7 @@ export default function ProjectCard({index, project}: Props) {
             {project.languages.map((language) => (
               <Tooltip
                 key={`${language.name}-${index}`}
-                description={`${language.name} ${language.version}`}
+                description={language.version ? `${language.name} ${language.version}` : language.name}
               >
                 {language.icon}
               </Tooltip>
@@ -175,6 +177,25 @@ export default function ProjectCard({index, project}: Props) {
           </p>
           
         </div>
+        {project.relatedRepositories && (
+          <div className="mt-5">
+            <h4>{language === 'es' ? 'Repositorios de la suite' : 'Suite repositories'}</h4>
+            <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+              {project.relatedRepositories.map(({ name, url }) => (
+                <li key={url}>
+                  <a
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-indigo-700 underline dark:text-indigo-300"
+                  >
+                    {name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
         <div className="flex w-full justify-end gap-4 mt-4">
           <a href={project.repository} target="_blank" rel="noopener noreferrer"
             className="btn-primary-outline"

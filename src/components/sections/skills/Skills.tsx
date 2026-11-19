@@ -4,7 +4,6 @@ import { getCategories } from "./skills.data"
 import Section from "../Section"
 import BgShapes from "@/components/pure/bgShapes/BgShapes";
 import classNames from "classnames";
-import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 
 type Props = {}
@@ -26,16 +25,15 @@ export default function Skills({}: Props) {
       />
       <h2>{language === 'es' ? 'Habilidades' : 'Skills'}</h2>
       <Tab.Group>
-        <Tab.List className="font-semibold bg-white/70 dark:bg-zinc-950/70 backdrop-blur-sm shadow-md dark:border-nonefont-semibold flex overflow-x-scroll rounded-xl md:overflow-x-auto gap-4 p-2 justify-start  md:justify-evenly">
-          {categories.map((category, index) => (
+        <Tab.List className="flex w-full items-center gap-1 overflow-x-auto rounded-xl bg-white/70 p-2 font-semibold shadow-md backdrop-blur-sm dark:bg-zinc-950/70 sm:justify-between">
+          {categories.map((category) => (
             <Tab
-              as={motion.div}
-              key={index}
+              key={category.name}
               className={({ selected }) =>
                 classNames(
-                  "rounded-lg p-3 font-semibold cursor-pointer flex gap-2 items-center transition ease-in-out",
+                  "flex shrink-0 items-center gap-2 whitespace-nowrap rounded-lg px-3 py-2 font-semibold transition ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500",
                   selected
-                    && "bg-indigo-500 text-white dark:bg-indigo-700 dark:text-white outline-none"
+                    && "bg-indigo-500 text-white dark:bg-indigo-700 dark:text-white"
                 )
               }
             >
@@ -50,7 +48,7 @@ export default function Skills({}: Props) {
           {categories.map((category, index) => (
             <Tab.Panel
               key={index}
-              className="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 rounded-lg"
+              className={classNames("grid w-full grid-cols-1 gap-4 rounded-lg sm:grid-cols-2", index !== categories.length - 1 && "md:grid-cols-3")}
             >
               {category.skills.map((skill, index) => (
                 <SkillCard

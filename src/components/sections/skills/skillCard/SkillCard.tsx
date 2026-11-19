@@ -9,7 +9,7 @@ type Props = {
 
 export default function SkillCard({skill, index}: Props) {
   const iconClasses = classNames(
-    'text-[80px]',
+    'shrink-0 text-5xl xl:text-6xl',
     skill.color
   )
   return (
@@ -22,7 +22,7 @@ export default function SkillCard({skill, index}: Props) {
       <div className={iconClasses}>
         {skill.icon}
       </div>
-      <div className="flex flex-col justify-center w-full gap-3">
+      <div className="flex min-w-0 flex-1 flex-col justify-center gap-3">
         <span
           className='text-md font-bold'
         >

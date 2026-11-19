@@ -11,6 +11,7 @@ export interface Project {
   live?: string;
   imagesLocation: string;
   imagesNumber: number;
+  imageDescriptions?: string[];
 }
 
 export interface DetailedProject extends Project {
@@ -21,4 +22,5 @@ export interface DetailedProject extends Project {
   languages: Technologies[];
   learned: string;
   mainLibraries?: string[];
+  relatedRepositories?: { name: string; url: string }[];
 }

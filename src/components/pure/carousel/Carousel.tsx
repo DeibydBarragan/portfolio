@@ -3,16 +3,19 @@ import Image from 'next/image'
 import { useState, useEffect, useCallback } from 'react'
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi'
 import classNames from "classnames";
+import { useLanguage } from '@/context/LanguageContext'
 
 type Props = {
   location: string
   imagesNumber: number
   alt: string
+  imageDescriptions?: string[]
   showButtons?: boolean
   className?: string
 }
 
-export default function Carousel({location, imagesNumber, alt, className, showButtons = true}: Props) {
+export default function Carousel({location, imagesNumber, alt, imageDescriptions, className, showButtons = true}: Props) {
+  const { language } = useLanguage()
   const images = numberToStringArray(imagesNumber)
   const [currentSlide, setCurrentSlide] = useState(0)
 
@@ -43,10 +46,10 @@ export default function Carousel({location, imagesNumber, alt, className, showBu
     <div className={classNames('flex w-full justify-center items-center relative', className)}>
       {showButtons && (
         <>
-          <button className="absolute left-0 text-gray-200 hover:text-gray-300 text-4xl transition ease-in-out z-10" onClick={onLeft}>
+          <button type="button" aria-label={language === 'es' ? 'Captura anterior' : 'Previous screenshot'} className="absolute left-0 text-gray-200 hover:text-gray-300 text-4xl transition ease-in-out z-10" onClick={onLeft}>
             <HiChevronLeft/>
           </button>
-          <button className="absolute right-0 text-gray-200 hover:text-gray-300 text-4xl transition ease-in-out z-10" onClick={onRight}>
+          <button type="button" aria-label={language === 'es' ? 'Siguiente captura' : 'Next screenshot'} className="absolute right-0 text-gray-200 hover:text-gray-300 text-4xl transition ease-in-out z-10" onClick={onRight}>
             <HiChevronRight/>
           </button>
         </>
@@ -55,7 +58,8 @@ export default function Carousel({location, imagesNumber, alt, className, showBu
             <Image
               key={index}
               src={`/images/${location}/${image}.webp`}
-              alt={alt}
+              alt={imageDescriptions?.[index] ?? alt}
+              aria-hidden={index !== currentSlide}
               width={720}
               height={480}
               quality={100}
